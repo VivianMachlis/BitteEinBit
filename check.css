@@ -1,0 +1,75 @@
+body {
+  background-color: pink !important;
+}
+
+nav {
+  background-color: #001a3a !important;
+}
+
+#Kompetenzen > li:nth-child(1){
+  background-color: #001a3a !important;
+}
+
+#Kompetenzen > li:nth-child(3){
+  background-color: #79ab2e !important;
+}
+
+#Kompetenzen > li:nth-child(5){
+  background-color: #c6d54f !important;
+}
+
+#Kompetenzen > li:nth-child(7){
+  background-color: #94c122 !important;
+}
+
+#Kompetenzen > li:nth-child(9){
+  background-color: #44b284 !important;
+}
+
+#Kompetenzen > li:nth-child(11){
+  background-color: #ffdd00 !important;
+}
+
+#Kompetenzen > li:nth-child(13){
+  background-color: #ffed98 !important;
+}
+
+#Kompetenzen > li:nth-child(15){
+  background-color: #fbb900 !important;
+}
+
+#Kompetenzen > li:nth-child(17){
+  background-color: #ef7d25 !important;
+}
+
+#Kompetenzen > li:nth-child(19){
+  background-color: #d60d66 !important;
+}
+
+#Kompetenzen > li:nth-child(21){
+  background-color: #ea518d !important;
+}
+
+#Kompetenzen > li:nth-child(23){
+  background-color: #f29db7 !important;
+}
+
+#Kompetenzen > li:nth-child(25){
+  background-color: #a62068 !important;
+}
+
+#Kompetenzen > li:nth-child(27){
+  background-color: #008fc8 !important;
+}
+
+#Kompetenzen > li:nth-child(29){
+  background-color: #62c2d0 !important;
+}
+
+#Kompetenzen > li:nth-child(31){
+  background-color: #004077 !important;
+}
+
+#Kompetenzen > li:nth-child(31){
+  background-color: #3873b9 !important;
+}
