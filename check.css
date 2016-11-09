@@ -1,5 +1,6 @@
 body {
   background-color: pink !important;
+  overflow: scroll;
 }
 
 nav {
@@ -72,4 +73,8 @@ nav {
 
 #Kompetenzen > li:nth-child(31){
   background-color: #3873b9 !important;
+}
+
+#Forderplan, #Profil, #Schule, #Klasse, #Fragen, #Exit{
+  background-color: #001a3a !important;
 }
