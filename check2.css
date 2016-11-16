@@ -1,15 +1,17 @@
-img {
+#header {
     display: block;
-    margin: 0 auto;
+    margin-left: 400px;
 }
 
 form {
     position: absolute;
-    left: 70%;
+    left: 50%;
 }
 
 .form-control {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 300px;
     height: 40px;
     border-color: #104E8B;
@@ -21,4 +23,32 @@ form {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#footer {
+    margin-top: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#edition {
+    font-size: 9pt;
+    color: #001a3a;
+    display: block;
+    text-align: center;
+}
+
+#ersteZeile {
+    font-size: 9pt;
+    color: #8da6d6;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#letzteZeile {
+    margin-top: -10px;
+    font-size: 9pt;
+    color: #8da6d6;
+    text-align: center;
 }
