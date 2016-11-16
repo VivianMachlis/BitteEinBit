@@ -3,12 +3,19 @@ body {
   overflow: scroll;
 }
 
+#illustrationRight, #illustrationLeft{
+  margin-top: 100px;
+}
+
+.button:active{
+  border: none;
+}
 
 nav {
   background-color: #001a3a !important;
 }
 
-.dropdown-menu > li:nth-child(1){
+.dropdown-menu > li:first-child{
   margin-top: 10px;
 }
 
@@ -28,7 +35,6 @@ nav {
   margin-left: 400px; /*px eig vorgegeben aber magrin-right geht i.wie nicht*/
   margin-top: 12px;
 }
-
 
 /*Immer das letzte Listenelement*/
 #superhero > li:last-child, #chapterOverview > li:last-child,#educationalPlan > li:last-child, #achievedCompetences > li:last-child, #school > li:last-child, #studyGroup > li:last-child, #logout >li:last-child, #help > li:last-child{
