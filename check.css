@@ -7,17 +7,35 @@ body {
   margin-top: 100px;
 }
 
-.button:active{
-  border: none;
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+  background-color: #001a3a;
+}
+
+.dropdown-menu{
+  top: 140%;
+  border-color: white;
+  border-width: 5px;
+}
+
+.dropdown-menu >li >a{
+  font-weight: 700;
+  color: white;
+}
+
+.dropdown-menu > li:first-child, .dropdown-menu > li:first-child a:hover{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+  .dropdown-menu > li:last-child, .dropdown-menu > li:last-child a:hover{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 nav {
   background-color: #001a3a !important;
 }
 
-.dropdown-menu > li:first-child{
-  margin-top: 10px;
-}
 
 .liste{
   margin-top: -15px;
