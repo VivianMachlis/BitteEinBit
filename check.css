@@ -14,15 +14,18 @@ body {
 .dropdown-menu{
   top: 140%;
   border-color: white;
-  border-width: 5px;
+  border-width: 3px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 5px;
 }
 
-.dropdown-menu >li >a{
+.dropdown-menu >li > a, .dropdown-menu >li > a:hover{
   font-weight: 700;
   color: white;
 }
 
-.dropdown-menu > li:first-child, .dropdown-menu > li:first-child a:hover{
+.dropdown-menu > li:first-child, .dropdown-menu > li:first-child a:hover, .navbar-nav>li>.dropdown-menu{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -35,6 +38,7 @@ body {
 nav {
   background-color: #001a3a !important;
 }
+
 
 
 .liste{
