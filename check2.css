@@ -12,14 +12,16 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        color: #001a3a;
         width: 300px;
         height: 40px;
-        border-color: #104E8B;
+        border-color: grey;
         border-width: medium;
     }
 
     input[type=email]:focus, input[type=password]:focus {
-        border-color: black;
+        border-color: #001a3a;
+        font-size: 13pt;
     }
 
     #Login {
