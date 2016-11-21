@@ -6,12 +6,17 @@ body {
 
 .scrollable-menu {
     height: auto;
-    max-height: 500px;
+    max-height: 510px;
     overflow-x: hidden;
 }
 
+/* unsichtbare Scrollbar*/
+html {
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+}
 ::-webkit-scrollbar {
-    display: none;
+    display: none;  // Safari and Chrome
 }
 
 #illustrationRight, #illustrationLeft{
