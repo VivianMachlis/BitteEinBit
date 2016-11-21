@@ -1,6 +1,17 @@
+
 body {
   background-color: pink !important;
   overflow: scroll;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 #illustrationRight, #illustrationLeft{
@@ -9,6 +20,15 @@ body {
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
   background-color: #001a3a;
+}
+
+  .navbar{
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+  color: white;
 }
 
 .dropdown-menu{
@@ -38,7 +58,6 @@ body {
 nav {
   background-color: #001a3a !important;
 }
-
 
 
 .liste{
@@ -204,4 +223,18 @@ nav {
 
 #chapterOverview > li:nth-child(33) a:hover, #achievedCompetences > li:nth-child(35) a:hover{
   background-color: #658bc8 !important;
+}
+
+#footer, #raupundritter{
+  color: #4565ad;
+  text-align: center;
+}
+
+#footer{
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: -5px;
+}
+#raupundritter{
+  font-size: 13px;
 }
