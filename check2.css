@@ -33,6 +33,18 @@
         margin-right: auto;
     }
 
+    #RegistrierenEins, #RegistrierenZwei {
+        font-family: Roboto Thin;
+        font-size: 13pt;
+        color: #8da6d6;
+        text-align: center;
+    }
+
+    #RegistrierenZwei {
+        margin-top: -10px;
+        text-decoration: underline;
+    }
+
     #footer {
         margin-top: 100px;
         display: block;
@@ -41,6 +53,7 @@
     }
 
     #edition {
+        margin-top: 5px;
         font-family: Roboto Thin;
         font-size: 9pt;
         color: #001a3a;
@@ -48,18 +61,10 @@
         text-align: center;
     }
 
-    #ersteZeile {
+    #Impressum {
         font-family: Roboto Thin;
         font-size: 9pt;
         color: #8da6d6;
         text-align: center;
         white-space: nowrap;
-    }
-
-    #letzteZeile {
-        margin-top: -10px;
-        font-family: Roboto Thin;
-        font-size: 9pt;
-        color: #8da6d6;
-        text-align: center;
     }
