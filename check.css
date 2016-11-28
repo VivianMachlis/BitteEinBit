@@ -1,6 +1,6 @@
 
 body {
-  background-color: pink !important;
+  background-color: #f7bed2 !important;
   overflow: scroll;
 }
 
@@ -10,18 +10,28 @@ body {
     overflow-x: hidden;
 }
 
+
 /* unsichtbare Scrollbar*/
 html {
-    -ms-overflow-style: none;  // IE 10+
-    overflow: -moz-scrollbars-none;  // Firefox
+    -ms-overflow-style: none;  /* IE 10+*/
+    overflow: -moz-scrollbars-none;  /* Firefox*/
 }
 ::-webkit-scrollbar {
-    display: none;  // Safari and Chrome
+    display: none;  /* Safari and Chrome*/
 }
 
-#illustrationRight, #illustrationLeft{
-  margin-top: 100px;
+#littleChapterFlag{
+  margin-top: 70px;
 }
+
+#illustrationLeft{
+  margin-top: -10px;
+}
+
+#illustrationRight{
+  margin-top: -600px;
+}
+
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
   background-color: #001a3a;
@@ -230,16 +240,22 @@ nav {
   background-color: #658bc8 !important;
 }
 
-#footer, #raupundritter{
+#footerlogo, #footertext{
   color: #4565ad;
   text-align: center;
 }
 
-#footer{
-  font-size: 15px;
+#footerlogo{
   margin-top: 8px;
-  margin-bottom: -5px;
+  margin-bottom: 1px;
 }
-#raupundritter{
-  font-size: 13px;
+#footertext{
+  color: #4565ad;
+  font-size: 10px;
+  margin-bottom: -3px;
+}
+
+.resize {
+    width: 70px;
+    height: auto;
 }
