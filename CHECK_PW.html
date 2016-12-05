@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="check_PW.css">
+</head>
+
+
+
+<body>
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Navigation ein-/ausblenden</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img alt="chapterOverview" src="images-master/chapterOverview-inactive.png">
+                        </a>
+                        <ul class="dropdown-menu scrollable-menu" id="chapterOverview">
+                            <li class="liste">
+                                <a href="#"><img alt="confirmation" src="images-master/confirmation.png">CHECK! KOMPETENZENLISTE</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">DAS BIN ICH</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ICH UND DIE ANDEREN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">DIE WELT UM MICH HERUM</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ICH WERDE SELBSTSTÄNDIG</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">SICH BEWEGEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">LERNEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ARBEITEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">GESTALTEN UND ERSCHAFFEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">SPRECHEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">FREMDSPRACHE</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">LESEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">SCHREIBEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">MESSEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">LÖSUNGEN FINDEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ZÄHLEN UND RECHNEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">FORM UND RAUM ENTDECKEN</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="educationalPlanPic">
+                            <img alt="educationalPlan" src="images-master/educationalPlan-inactive.png">
+                        </a>
+                        <ul class="dropdown-menu" id="educationalPlan">
+                            <li class="liste">
+                                <a href="#"><img alt="educationalPlan" src="images-master/educationalPlan-big.png"></a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">MATHE ZR BIS 10</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">DEUTSCH SATZANFÄNGE</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">SACHKUNDE "DER WALD"</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="achievedCompetencesPic">
+                            <img alt="achievedCompetences" src="images-master/achievedCompetences-inactive.png">
+                        </a>
+                        <ul class="dropdown-menu scrollable-menu" id="achievedCompetences">
+                            <li class="liste">
+                                <a href="#"><img alt="achievedCompetences" src="images-master/achievedCompetences-big.png">DAS KANN ICH!</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ALLE KOMPETENZEN!</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">DAS BIN ICH</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ICH UND DIE ANDEREN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">DIE WELT UM MICH HERUM</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ICH WERDE SELBSTSTÄNDIG</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">SICH BEWEGEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">LERNEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ARBEITEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">GESTALTEN UND ERSCHAFFEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">SPRECHEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">FREMDSPRACHE</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">LESEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">SCHREIBEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">MESSEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">LÖSUNGEN FINDEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">ZÄHLEN UND RECHNEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">FORM UND RAUM ENTDECKEN</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+
+
+                <div class="brand-centered">
+                    <a class="navbar-brand"><img src="images-master/logo.png" alt="Logo">
+                    </a>
+                </div>
+
+
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="superheroPic">
+                            <img alt="superhero" src="images-master/student/superhero-robin-inactive.png"></a>
+                        <ul class="dropdown-menu" id="superhero">
+                            <li class="liste">
+                                <a href="#"><img alt="superhero" src="images-master/student/superhero-robin-big-active.png"></a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">MEIN PROFIL ÄNDERN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">MEIN PASSWORT ÄNDERN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">MEIN PROFIL LÖSCHEN</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="schoolPic">
+                            <img alt="school" src="images-master/school/school-inactive.png"></span>
+                        </a>
+                        <ul class="dropdown-menu" id="school">
+                            <li class="liste">
+                                <a href="#"><img alt="school" src="images-master/school/school-purple-big-active.png"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="studyGroupPic">
+                            <img alt="studyGroup" src="images-master/studyGroup/studyGroup_2b_inactive.png"></a>
+                        <ul class="dropdown-menu" id="studyGroup">
+                            <li class="liste">
+                                <a href="#"><img alt="studyGroup" src="images-master/studyGroup/studyGroup_2b_active-big.png"></a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="helpPic">
+                            <img alt="help" src="images-master/help-inactive.png"></a>
+                        <ul class="dropdown-menu" id="help">
+                            <li class="liste">
+                                <a href="#"><img alt="help" src="images-master/help-big.png">BRAUCHST DU HILFE?</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">SO GEHT'S!</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">VIDEO-TUTORIALS</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">HÄUFIG GESTELLTE FRAGEN</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">KONTAKT</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img alt="logout" src="images-master/logout-iactive.png"></a>
+                        <ul class="dropdown-menu" id="logout">
+                            <li class="liste">
+                                <a href="#"><img alt="logout" src="images-master/logout-big.png">MÖCHTEST DU CHECK! VERLASSEN?</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">JA</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="liste"><a href="#">NEIN</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <img src="images-master/change-password.png" class="img-responsive" id="header" alt="Startseite">
+        </div>
+    </div>
+    <p id="PasswortAendern">PASSWORT ÄNDERN</p>
+    <form class="form-horizontal">
+        <!--Eingabefeld aktuelles Passwort-->
+        <div align="center">
+            <div class="form-group">
+                <label for="password" class="col-sm-4 control-label" id="Label1">AKTUELLES PASSWORT* </label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="inputFeld1">
+                </div>
+            </div>
+        </div>
+        <!--Eingabefeld neues Passwort-->
+        <div align="center">
+            <div class="form-group">
+                <label for="password" class="col-sm-4 control-label" id="Label2">NEUES PASSWORT* </label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="inputFeld2">
+                </div>
+            </div>
+        </div>
+        <!--Eingabefeld Passwort bestätigen-->
+        <div align="center">
+            <div class="form-group">
+                <label for="eingabefeldPasswortBestätigen" class="col-sm-4 control-label" id="Label3">PASSWORT BESTÄTIGUNG*</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="inputFeld3">
+                </div>
+            </div>
+        </div>
+        <div align="center">
+            <button type="button" class="btn btn-primary" id="PWaendern">ÄNDERN</button>
+        </div>
+        </div>
+    </form>
+</body>
+
+</html>
+l>
