@@ -1,0 +1,19 @@
+#footerlogo, #footertext{
+  color: #4565ad;
+  text-align: center;
+}
+
+#footerlogo{
+  margin-top: 8px;
+  margin-bottom: 1px;
+}
+#footertext{
+  color: #4565ad;
+  font-size: 10px;
+  margin-bottom: -3px;
+}
+
+.resize {
+    width: 70px;
+    height: auto;
+}
