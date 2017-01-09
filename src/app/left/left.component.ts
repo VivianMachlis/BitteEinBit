@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ComService} from 'src';
+
 
 @Component({
   selector: 'app-left',
@@ -10,7 +12,8 @@ export class LeftComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	document.getElementById('app-left').innerHTML= "hello"
+  	ComService.signin();
+  	document.getElementById('app-left').innerHTML= "" + ComService.get
   }
 
 }
