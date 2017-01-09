@@ -1,24 +1,42 @@
-<app-achievedcompetences></app-achievedcompetences>
-<app-chapter-overview></app-chapter-overview>
-<app-educational-plan></app-educational-plan>
-<app-help></app-help>
-<app-logout></app-logout>
-<app-school></app-school>
-<app-studygroup></app-studygroup>
-<app-superhero></app-superhero>
-
 <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  <div class="container-fluid">
+    <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Navigation ein-/ausblenden</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-            </div>
-            <app-dropdown-menu></app-dropdown-menu>
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    </div>
+
+
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <app-chapter-overview></app-chapter-overview>
+        <app-educational-plan></app-educational-plan>
+        <app-achievedcompetences></app-achievedcompetences>
+      </ul>
+
+      <div>
+        <ul class="nav navbar-nav collapse navbar-collapse" id="logo">
+          <li>
+            <img alt="logo" src="images-master/logo.png">
+          </li>
+        </ul>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <app-superhero></app-superhero>
+        <app-school></app-school>
+        <app-studygroup></app-studygroup>
+        <app-help></app-help>
+        <app-logout></app-logout>
+
+
+
+      </ul>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
