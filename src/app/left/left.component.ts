@@ -10,8 +10,7 @@ export class LeftComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	var x = http.get('app-left');
-  	x = "hello"
+  	document.getElementById('app-left').innerHTML= "hello"
   }
 
 }
