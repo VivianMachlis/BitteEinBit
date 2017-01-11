@@ -1,0 +1,70 @@
+#header {
+  display: block;
+  margin: auto;
+}
+
+.form-control {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 13pt;
+  color: #001a3a;
+  width: 300px;
+  height: 40px;
+  border-color: #d3ddf2;
+  border-width: medium;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+  border-color: #001a3a;
+  font-family: Brandon Grotesque Black !important;
+  font-size: 13pt;
+}
+
+#Login {
+  display: block;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  font-family: Brandon Grotesque Black;
+  font-size: 13pt;
+  background-color: #001a3a;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#RegistrierenEins, #RegistrierenZwei {
+  font-family: Roboto Thin;
+  font-size: 13pt;
+  color: #8da6d6;
+  text-align: center;
+}
+
+#RegistrierenZwei {
+  margin-top: -10px;
+  text-decoration: underline;
+}
+
+#footer {
+  margin-top: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#edition {
+  margin-top: 5px;
+  font-family: Roboto Thin;
+  font-size: 9pt;
+  color: #001a3a;
+  display: block;
+  text-align: center;
+}
+
+#Impressum {
+  font-family: Roboto Thin;
+  font-size: 9pt;
+  color: #8da6d6;
+  text-align: center;
+  white-space: nowrap;
+}
