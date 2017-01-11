@@ -11,11 +11,6 @@ import { LeftComponent } from './left/left.component';
 import { MiddleComponent } from './middle/middle.component';
 import { RightComponent } from './right/right.component';
 import { BubbleDetailsComponent } from './bubble-details/bubble-details.component';
-import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
-import { KompetenzlisteComponent } from './kompetenzliste/kompetenzliste.component';
-import { FoederplanComponent } from './foederplan/foederplan.component';
-import { ErreichtekompetenzenComponent } from './erreichtekompetenzen/erreichtekompetenzen.component';
-import { ProfilComponent } from './profil/profil.component';
 import { ChapterOverviewComponent } from './chapter-overview/chapter-overview.component';
 import { EducationalPlanComponent } from './educational-plan/educational-plan.component';
 import { AchievedcompetencesComponent } from './achievedcompetences/achievedcompetences.component';
@@ -36,11 +31,6 @@ import { LoginComponent } from './login/login.component';
     MiddleComponent,
     RightComponent,
     BubbleDetailsComponent,
-    DropdownMenuComponent,
-    KompetenzlisteComponent,
-    FoederplanComponent,
-    ErreichtekompetenzenComponent,
-    ProfilComponent,
     ChapterOverviewComponent,
     EducationalPlanComponent,
     AchievedcompetencesComponent,

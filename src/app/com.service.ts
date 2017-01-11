@@ -8,10 +8,11 @@ export class ComService {
 
 	constructor(private http: HTTP) { }
   	login(){
-  		var = this.html.put("/api/V1/login");
+  		token = this.html.put("/api/V1/login");
+
   }
   getAchievedCompetences(){
-  	return this.http.get("")
+  		return this.http.get("")
   }
 
 

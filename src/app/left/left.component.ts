@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ComService} from 'src';
+//import {ComService} from 'src';
 
 
 @Component({
@@ -12,8 +12,8 @@ export class LeftComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	ComService.signin();
-  	document.getElementById('app-left').innerHTML= "" + ComService.get
+  	//ComService.signin();
+  	//document.getElementById('app-left').innerHTML= "" + ComService.get
   }
 
 }
