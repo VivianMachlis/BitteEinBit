@@ -11,14 +11,14 @@ import { LeftComponent } from './left/left.component';
 import { MiddleComponent } from './middle/middle.component';
 import { RightComponent } from './right/right.component';
 import { BubbleDetailsComponent } from './bubble-details/bubble-details.component';
-import { ChapterOverviewComponent } from './chapter-overview/chapter-overview.component';
-import { EducationalPlanComponent } from './educational-plan/educational-plan.component';
-import { AchievedcompetencesComponent } from './achievedcompetences/achievedcompetences.component';
-import { SuperheroComponent } from './superhero/superhero.component';
-import { SchoolComponent } from './school/school.component';
-import { StudygroupComponent } from './studygroup/studygroup.component';
-import { HelpComponent } from './help/help.component';
-import { LogoutComponent } from './logout/logout.component';
+//import { ChapterOverviewComponent } from './chapter-overview/chapter-overview.component';
+//import { EducationalPlanComponent } from './educational-plan/educational-plan.component';
+//import { AchievedcompetencesComponent } from './achievedcompetences/achievedcompetences.component';
+//import { SuperheroComponent } from './superhero/superhero.component';
+//import { SchoolComponent } from './school/school.component';
+//import { StudygroupComponent } from './studygroup/studygroup.component';
+//import { HelpComponent } from './help/help.component';
+//import { LogoutComponent } from './logout/logout.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -31,14 +31,14 @@ import { LoginComponent } from './login/login.component';
     MiddleComponent,
     RightComponent,
     BubbleDetailsComponent,
-    ChapterOverviewComponent,
-    EducationalPlanComponent,
-    AchievedcompetencesComponent,
-    SuperheroComponent,
-    SchoolComponent,
-    StudygroupComponent,
-    HelpComponent,
-    LogoutComponent,
+    //ChapterOverviewComponent,
+    //EducationalPlanComponent,
+    //AchievedcompetencesComponent,
+    //SuperheroComponent,
+    //SchoolComponent,
+    //StudygroupComponent,
+    //HelpComponent,
+    //LogoutComponent,
     LoginComponent
   ],
   imports: [
