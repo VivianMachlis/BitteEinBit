@@ -19,18 +19,18 @@ html {
     display: none;  /*Safari and Chrome*/
 }
 
-#littleChapterFlag{
-  margin-top: 70px;
-}
+/*.brand-centered > #logo{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+}*/
 
-#illustrationLeft{
-  margin-top: -10px;
+@media (max-width: 767px)  {
+  padding-left: 15px;
 }
-
-#illustrationRight{
-  margin-top: -600px;
-}
-
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
   background-color: #001a3a;
@@ -54,6 +54,9 @@ html {
   border-radius: 5px;
 }
 
+.dropdown-menu >li > a{
+  padding: 10px 20px;
+}
 .dropdown-menu >li > a, .dropdown-menu >li > a:hover{
   font-weight: 700;
   color: white;
