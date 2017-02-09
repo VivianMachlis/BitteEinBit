@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import {chapter} from 'app/class/chapter.class';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -10,7 +11,7 @@ import 'rxjs/add/operator/map';
 export class ComService {
 	private token: String;
 	private isAuth : Boolean;
-	private loginHeader;
+	private loginHeader : Headers;
 	
 	private url:  string = "http://46.101.204.215:1337";
 	private loginUrl: String = "/api/V1/login"; //PUT
@@ -21,8 +22,8 @@ export class ComService {
 	private getAvatarsUrl = "/api/V1/avatar/";		//GET
 	private getStudentUrl = "/api/V1/student/";	//GET
 	private getChapterDetailsUrl = "/api/V1/chapter"; //GET
-	private getChapterColorUrl = "/api/V1/chapter/:chapterId"; //GET
-	private getChapterIllustrationsUrl = "/api/V1/chapterillustrations/:chapterId"; //GET
+	private getChapterSingleUrl = "/api/V1/chapter/:"; //GET with id 
+	private getChapterIllustrationsUrl = "/api/V1/chapterillustrations/:"; //GET with id
 	private getStudentCompetencesUrl = "/api/V1/studentcompetence?checked=true&chapterId="; //GET chapter with ID
 	private getEducationalPlanUrl = "/api/V1/educationalPlan"; //GET
 	private getEducationalPlanFilteredUrl = "/api/V1/educationalPlan/:"; //GET with ID
@@ -31,31 +32,37 @@ export class ComService {
 
 
 	constructor(private http: Http) { 
-		this.isAuth = false;
-		this.loginHeader = new Headers();
+    this.loginHeader = new Headers();
+    //todo change
+		this.isAuth = true;
+    this.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYnVnc2J1bm55In0.zGKF0WlETIB7sjN4wjFyohVQOf8R5HUrHflap4WrEJ8";
+    this.loginHeader.append('Authorization',this.token.toString());
+		//
+    
 		this.loginHeader.append('Content-Type', 'application/json');
 	}
 
 
 
-	async login(username: String , password: String ){
-			await this.http.put(this.url+this.loginUrl,
+	login(username: String , password: String ){
+			this.http.put(this.url+this.loginUrl,
 				JSON.stringify({ username, password }),
 				{headers:this.loginHeader})
 				.map((res: Response) => res.json())
 				.subscribe(data => this.handleData(data, this),this.handleError);
-			return this.token;
 	}
   	private handleError(data:any){
   		console.log(data);
   	}
   	private handleData(data, com:ComService){
-  		console.log(data);
-  		if(data){
- 			com.isAuth = true;
-  			com.token = data.token;
-  			com.loginHeader.append('Authorization', data.token);
-  		}
+      if(!com.isAuth){
+  	  	console.log(data);
+  		  if(data){
+ 			    com.isAuth = true;
+  			  com.token = data.token;
+  			  com.loginHeader.append('Authorization', data.token);
+  		  }
+      }
   	}
 
   	changePassword(oldPw : String , newPw : String){
@@ -69,18 +76,42 @@ export class ComService {
   		}
   	}
 
-  	getChapterDetails(){
+  	getChapterDetails() : Observable<chapter[]>{
+      var transactionIsHandled = false;
+      //ugly code to wait for authorization
+      //console.log("getChapterDetails got called");
   		if(this.isAuth){
+        //console.log("chapter should get handled");
+        var result : Array<chapter> = [];
   			return this.http.get(this.url+this.getChapterDetailsUrl,{headers:this.loginHeader})
-  				.map((res: Response) => res.json());
+  				.map((res: Response) => res.json())
+          //.subscribe(data =>  {result = this.handleChapter(data,this),transactionIsHandled=true},this.handleError)
+        //while(!transactionIsHandled){
+          //await this.delay(50);
+          //console.log("fuck await");
+      //}
+        //console.log("iwork?: ")
+        //console.log(result[1].id);
+        //return result;
+        //console.log(x);
+        //return x;
+           /*{
+            for (var i = 0; i < length; ++i) {
+              // code...
+            }
+            console.log(data);
+          });
+          console.log("im am auth");*/
   		}else{
+        console.log("token is still not ready");
   			this.noAuthError;
   		}
   	}
+   
 
-  	getChapterColors(){
+  	getSingleChapter(id:number){
   		if(this.isAuth){
-  			return this.http.get(this.url+this.getChapterColorUrl,{headers:this.loginHeader})
+  			return this.http.get(this.url+this.getChapterSingleUrl+id,{headers:this.loginHeader})
   				.map((res: Response) => res.json());
   		}else{
   			this.noAuthError;
@@ -125,6 +156,16 @@ export class ComService {
   		return this.http.get("")
   	}
 
-  	private noAuthError(){}
+  	private noAuthError(){
+      console.error("not auth");
+      return "no auth";
+    }
+    //delay function to handle async
+    delay(ms: number) {
+       return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+
 
 }
+
