@@ -19,18 +19,9 @@ html {
     display: none;  /*Safari and Chrome*/
 }
 
-/*.brand-centered > #logo{
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 0;
-}*/
-
-@media (max-width: 767px)  {
+/*@media (max-width: 767px)  {
   padding-left: 15px;
-}
+}*/
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
   background-color: #001a3a;
@@ -81,17 +72,16 @@ nav {
   margin-top: -15px;
 }
 
-#educationalPlanPic, #educationalPlan, #achievedCompetencesPic, #achievedCompetences{
-  margin-left: -15px;
+.navbar-right{
+  padding-left: 70px;
 }
 
-#helpPic, #schoolPic, #superheroPic, #superhero{
-  margin-right: -15px;
+#superheroPic, #schoolPic, #studyGroupPic, #helpPic,{
+  margin-left: 1px;
 }
 
 #logo{
-  margin-left: 400px; /*px eig vorgegeben aber magrin-right geht i.wie nicht*/
-  margin-top: 12px;
+  padding-left: 125px;
 }
 
 /*Immer das letzte Listenelement*/
