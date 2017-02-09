@@ -1,6 +1,10 @@
 body {
-  background-color: #f7bed2 !important;
+  background-color: #f7bed2;
   overflow: scroll;
+}
+
+nav {
+  background-color: #001a3a !important;
 }
 
 .scrollable-menu {
@@ -19,18 +23,6 @@ html {
     display: none;  /*Safari and Chrome*/
 }
 
-/*.brand-centered > #logo{
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 0;
-}*/
-
-@media (max-width: 767px)  {
-  padding-left: 15px;
-}
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
   background-color: #001a3a;
@@ -72,27 +64,38 @@ html {
     border-bottom-right-radius: 5px;
 }
 
-nav {
-  background-color: #001a3a !important;
-}
-
 
 .liste{
   margin-top: -15px;
 }
 
-#educationalPlanPic, #educationalPlan, #achievedCompetencesPic, #achievedCompetences{
-  margin-left: -15px;
+.navbar-right{
+  padding-left: 70px;
 }
 
-#helpPic, #schoolPic, #superheroPic, #superhero{
-  margin-right: -15px;
+
+@media (max-width: 767px) {
+
+.hidden-xs {
+  display: none !important;
+}
+
+.navbar-right{
+  padding: 0px;
+}
+
+}
+
+
+#superheroPic, #schoolPic, #studyGroupPic, #helpPic,{
+  margin-left: 1px;
 }
 
 #logo{
-  margin-left: 400px; /*px eig vorgegeben aber magrin-right geht i.wie nicht*/
-  margin-top: 12px;
+  padding-left: 125px;
+  transform: scale(1.3, 1.3);
 }
+
 
 /*Immer das letzte Listenelement*/
 #superhero > li:last-child, #chapterOverview > li:last-child,#educationalPlan > li:last-child, #achievedCompetences > li:last-child, #school > li:last-child, #studyGroup > li:last-child, #logout >li:last-child, #help > li:last-child{
