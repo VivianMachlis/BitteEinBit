@@ -11,29 +11,33 @@ export class LoginComponent implements OnInit {
 
 	private username : string;
 	private password : string;
+	//enables routing after succesfully recieved token. i'm smart sometimes!
+	private callback = () : void =>{
+  		this.router.navigate(['achievedCompetences']);
+  	}
 
   constructor(private com : ComService, private router : Router) { }
 
   ngOnInit() {
   }
 
-  update(a:string,b:string){
-	this.username = a;
-	this.password = b;
-	console.log("updating is fun "+ a +" "+ b)
-  }
-
-  login(){
+  login(username:string,password:string){
+  	this.username = username;
+  	this.password = password;
   	if(this.username&&this.password){
-  		this.com.login(this.username,this.password);
+  		this.com.login(this.username,this.password,this.callback);
   		console.log("posted username and password");
-  		this.router.navigate(['achievedCompetences']);
+  		
   	}else{
   		console.log("no username, password");
   		console.log(this.password +"--"+this.username);
   		//TODO display: please enter a username and a password
   	}
+
   }
+
+  
+ 
 
 }
 

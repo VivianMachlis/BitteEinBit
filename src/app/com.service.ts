@@ -34,33 +34,36 @@ export class ComService {
 	constructor(private http: Http) { 
     this.loginHeader = new Headers();
     //todo change
-		this.isAuth = true;
-    this.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYnVnc2J1bm55In0.zGKF0WlETIB7sjN4wjFyohVQOf8R5HUrHflap4WrEJ8";
-    this.loginHeader.append('Authorization',this.token.toString());
+		//this.isAuth = true;
+    //this.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYnVnc2J1bm55In0.zGKF0WlETIB7sjN4wjFyohVQOf8R5HUrHflap4WrEJ8";
+    //this.loginHeader.append('Authorization',this.token.toString());
 		//
+    this.isAuth = false;
     
 		this.loginHeader.append('Content-Type', 'application/json');
 	}
 
 
 
-	login(username: String , password: String ){
+	login(username: String , password: String , callback: any){
 			return this.http.put(this.url+this.loginUrl,
 				JSON.stringify({ username, password }),
 				{headers:this.loginHeader})
 				.map((res: Response) => res.json())
-				.subscribe(data => this.handleData(data, this),this.handleError);
+				.subscribe(data => this.handleData(data, this,callback),this.handleError);
 	}
   	private handleError(data:any){
   		console.log(data);
   	}
-  	private handleData(data, com:ComService){
+  	private handleData(data, com:ComService,callback:any){
       if(!com.isAuth){
   	  	console.log(data);
   		  if(data){
  			    com.isAuth = true;
   			  com.token = data.token;
   			  com.loginHeader.append('Authorization', data.token);
+          //callback to enable routing
+          callback();
   		  }
       }
       return true;
