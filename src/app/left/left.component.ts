@@ -14,7 +14,7 @@ export class LeftComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.comservice.login("bugsbunny","M11K");
+  	//this.comservice.login("bugsbunny","M11K");
   }
 
 }

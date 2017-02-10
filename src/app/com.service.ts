@@ -45,7 +45,7 @@ export class ComService {
 
 
 	login(username: String , password: String ){
-			this.http.put(this.url+this.loginUrl,
+			return this.http.put(this.url+this.loginUrl,
 				JSON.stringify({ username, password }),
 				{headers:this.loginHeader})
 				.map((res: Response) => res.json())
@@ -63,6 +63,7 @@ export class ComService {
   			  com.loginHeader.append('Authorization', data.token);
   		  }
       }
+      return true;
   	}
 
   	changePassword(oldPw : String , newPw : String){
