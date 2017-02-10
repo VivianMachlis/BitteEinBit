@@ -1,6 +1,6 @@
-header {
+#header {
   display: block;
-  margin: auto;
+  margin:auto;
 }
 
 .form-control {
@@ -17,7 +17,6 @@ header {
 
 input[type=email]:focus, input[type=password]:focus {
   border-color: #001a3a;
-  font-family: Brandon Grotesque Black !important;
   font-size: 13pt;
 }
 
@@ -26,24 +25,18 @@ input[type=email]:focus, input[type=password]:focus {
   margin-top: 20px;
   width: 150px;
   height: 40px;
-  font-family: Brandon Grotesque Black;
   font-size: 13pt;
   background-color: #001a3a;
   margin-left: auto;
   margin-right: auto;
 }
 
-#RegistrierenEins, #RegistrierenZwei {
-  font-family: Roboto Thin;
+#Registrieren{
   font-size: 13pt;
   color: #8da6d6;
   text-align: center;
 }
 
-#RegistrierenZwei {
-  margin-top: -10px;
-  text-decoration: underline;
-}
 
 #footer {
   margin-top: 100px;
@@ -54,7 +47,6 @@ input[type=email]:focus, input[type=password]:focus {
 
 #edition {
   margin-top: 5px;
-  font-family: Roboto Thin;
   font-size: 9pt;
   color: #001a3a;
   display: block;
@@ -62,7 +54,6 @@ input[type=email]:focus, input[type=password]:focus {
 }
 
 #Impressum {
-  font-family: Roboto Thin;
   font-size: 9pt;
   color: #8da6d6;
   text-align: center;
