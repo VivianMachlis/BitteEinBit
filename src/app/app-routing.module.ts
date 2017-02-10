@@ -4,12 +4,15 @@
     import { HeaderComponent }   from './header/header.component';
     import { FooterComponent }      from './footer/footer.component';
     import { ContentComponent }  from './content/content.component';
-    import {LoginComponent}  from './login/login.component'
+    import {LoginComponent}  from './login/login.component';
+    import {ChangePassword} from './changepassword/changepassword.component';
+
     const routes: Routes = [
       //initial path to login
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       //login path
       { path: 'login',  component: LoginComponent /*, outlet : 'logI'*/ },
+      {path: 'changepw', component: ChangePassword},
       //standard when logged in
       { path: 'achievedCompetences',  children: [
         //{path:'', component:ContentComponent,outlet:'content'},
