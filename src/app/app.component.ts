@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,OnChanges } from '@angular/core';
 import {ComService} from './com.service';
 
 

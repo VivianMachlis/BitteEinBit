@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+//Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
@@ -11,6 +12,7 @@ import { LeftComponent } from './left/left.component';
 import { MiddleComponent } from './middle/middle.component';
 import { RightComponent } from './right/right.component';
 import { BubbleDetailsComponent } from './bubble-details/bubble-details.component';
+import { RouterModule }   from '@angular/router';
 //import { ChapterOverviewComponent } from './chapter-overview/chapter-overview.component';
 //import { EducationalPlanComponent } from './educational-plan/educational-plan.component';
 //import { AchievedcompetencesComponent } from './achievedcompetences/achievedcompetences.component';
@@ -20,6 +22,10 @@ import { BubbleDetailsComponent } from './bubble-details/bubble-details.componen
 //import { HelpComponent } from './help/help.component';
 //import { LogoutComponent } from './logout/logout.component';
 import { LoginComponent } from './login/login.component';
+
+
+//custom Modules
+import { AppRoutingModule }     from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -165,6 +165,10 @@ export class ComService {
        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+    getStatusAuth() : Boolean{
+      return this.isAuth;
+    }
+
 
 
 }
