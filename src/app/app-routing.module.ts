@@ -12,7 +12,11 @@
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       //login path
       { path: 'login',  component: LoginComponent /*, outlet : 'logI'*/ },
-      { path: 'changepw', component: ChangepasswordComponent},
+      { path: 'changepw', children[
+      {path:'', component:FooterComponent,outlet:'footer'},
+      {path:'', component:HeaderComponent,outlet:'header'},
+      {path:'', component:ChangepasswordComponent,outlet:'content'},
+      ]},
       //standard when logged in
       { path: 'achievedCompetences',  children: [
         //{path:'', component:ContentComponent,outlet:'content'},
