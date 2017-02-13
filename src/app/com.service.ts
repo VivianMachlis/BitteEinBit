@@ -170,6 +170,7 @@ export class ComService {
     }
 
     getStatusAuth() : Boolean{
+      console.log('auth status is '+this.isAuth);
       return this.isAuth;
     }
 

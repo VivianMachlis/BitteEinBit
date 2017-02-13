@@ -12,7 +12,11 @@
       //initial path to login
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       //login path
-      { path: 'login',  component: LoginComponent /*, outlet : 'logI'*/ },
+      { path: 'login',  children: [
+          {path:'',component: LoginComponent},
+          {path:'',outlet:'footer'},
+          {path:'',outlet:'header'}
+          ]},
       { path: 'changepw', children: [
           {path:'', component:FooterComponent,outlet:'footer'},
           {path:'', component:HeaderComponent,outlet:'header'},

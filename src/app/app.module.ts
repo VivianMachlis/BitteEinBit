@@ -23,8 +23,6 @@ import { RouterModule }   from '@angular/router';
 //import { LogoutComponent } from './logout/logout.component';
 import { LoginComponent } from './login/login.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
-import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
-
 //custom Modules
 import { AppRoutingModule }     from './app-routing.module';
 import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
