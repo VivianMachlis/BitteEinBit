@@ -7,6 +7,7 @@
     import {LoginComponent}  from './login/login.component';
     import {ChangepasswordComponent} from './changepassword/changepassword.component';
     import {DeleteprofileComponent} from './deleteprofile/deleteprofile.component';
+    import {ChangeprofilepictureComponent} from './changeprofilepicture/changeprofilepicture.component';
 
     const routes: Routes = [
       //initial path to login
@@ -26,6 +27,11 @@
           {path:'', component:FooterComponent,outlet:'footer'},
           {path:'', component:HeaderComponent,outlet:'header'},
           {path:'', component:DeleteprofileComponent,outlet:'content'},
+      ]},
+      { path: 'changeprofilepicture', children: [
+          {path:'', component:FooterComponent,outlet:'footer'},
+          {path:'', component:HeaderComponent,outlet:'header'},
+          {path:'', component:ChangeprofilepictureComponent,outlet:'content'},
       ]},
       //standard when logged in
       { path: 'achievedCompetences',  children: [
