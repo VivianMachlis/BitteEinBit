@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 	private chapters : Array<chapter> = [];
 
  	constructor(private comservice: ComService,private check : ValidateService) { 
-     this.check.validate();
+     //this.check.validate();
    }
 
   ngOnInit() {

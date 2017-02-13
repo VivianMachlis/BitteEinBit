@@ -9,11 +9,11 @@ import {ValidateService} from './../validate.service'
 export class FooterComponent implements OnInit {
 
   constructor(private check : ValidateService) { 
-  	this.check.validate();
+  	//this.check.validate();
   }
 
   ngOnInit() {
-  	
+
   }
 
 }
