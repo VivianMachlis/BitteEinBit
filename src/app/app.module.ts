@@ -26,6 +26,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 
 //custom Modules
 import { AppRoutingModule }     from './app-routing.module';
+import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AppRoutingModule }     from './app-routing.module';
     //HelpComponent,
     //LogoutComponent,
     LoginComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    DeleteprofileComponent
   ],
   imports: [
     BrowserModule,
