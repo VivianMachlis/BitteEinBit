@@ -33,6 +33,13 @@
   border-style: none;
 }
 
+
+@media (max-width: 300px) {
+  #speichern {
+    margin-top: 5px;
+  }
+}
+
 #pic1, #pic2, #pic3, #pic4, #pic5, #pic6 {
   display: inline-block;
   margin-top: 20px;

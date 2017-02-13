@@ -8,36 +8,40 @@ nav {
 }
 
 .scrollable-menu {
-    height: auto;
-    max-height: 510px;
-    overflow-x: hidden;
+  height: auto;
+  max-height: 510px;
+  overflow-x: hidden;
 }
 
 
 /*unsichtbare Scrollbar*/
+
 html {
-    -ms-overflow-style: none;  /*IE 10+*/
-    overflow: -moz-scrollbars-none;  /*firefox*/
+  -ms-overflow-style: none;
+  /*IE 10+*/
+  overflow: -moz-scrollbars-none;
+  /*firefox*/
 }
+
 ::-webkit-scrollbar {
-    display: none;  /*Safari and Chrome*/
+  display: none;
+  /*Safari and Chrome*/
 }
 
-
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
   background-color: #001a3a;
 }
 
-  .navbar{
+.navbar {
   margin-bottom: 0px;
   border-radius: 0px;
 }
 
-.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
   color: white;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   top: 140%;
   border-color: white;
   border-width: 3px;
@@ -46,221 +50,222 @@ html {
   border-radius: 5px;
 }
 
-.dropdown-menu >li > a{
+.dropdown-menu>li>a {
   padding: 10px 20px;
 }
-.dropdown-menu >li > a, .dropdown-menu >li > a:hover{
+
+.dropdown-menu>li>a, .dropdown-menu>li>a:hover {
   font-weight: 700;
   color: white;
 }
 
-.dropdown-menu > li:first-child, .dropdown-menu > li:first-child a:hover, .navbar-nav>li>.dropdown-menu{
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+.dropdown-menu>li:first-child, .dropdown-menu>li:first-child a:hover, .navbar-nav>li>.dropdown-menu {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-  .dropdown-menu > li:last-child, .dropdown-menu > li:last-child a:hover{
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+.dropdown-menu>li:last-child, .dropdown-menu>li:last-child a:hover {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-
-
-.liste{
+.liste {
   margin-top: -15px;
 }
 
-.navbar-right{
+.navbar-right {
   padding-left: 70px;
 }
 
 @media (max-width: 767px) {
-
-.hidden-xs {
-  display: none !important;
-}
-
-.navbar-right{
-  padding: 0px;
-  margin-right: -2px;
-}
-
-.dropdown{
-  border-color: white;
-  border-bottom-style: solid;
-  border-bottom-width: thin;
-}
-
-li a:hover{
-  background-color: #4565ad !important;
-}
-
+  .hidden-xs {
+    display: none !important;
+  }
+  .navbar-right {
+    padding: 0px;
+    margin-right: -2px;
+  }
+  .dropdown {
+    border-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+  }
+  li a:hover {
+    background-color: #4565ad !important;
+  }
+  .liste {
+    border-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+  }
 }
 
 
 /*Text wird neben dem Bild in der ersten Liste angezeigt*/
+
 .dropdown p {
-text-align: right;
-display:inline-block;
-padding: 0;
+  text-align: right;
+  display: inline-block;
+  padding: 0;
 }
 
-#inListPic{
+#inListPic {
   padding-bottom: 30px;
 }
 
-#superheroPic, #schoolPic, #studyGroupPic, #helpPic,{
-  margin-left: 1px;
-}
-
-#logo{
+#logo {
   padding-left: 125px;
   transform: scale(1.3, 1.3);
 }
 
+
 /*Immer das letzte Listenelement*/
-#superhero > li:last-child, #chapterOverview > li:last-child,#educationalPlan > li:last-child, #achievedCompetences > li:last-child, #school > li:last-child, #studyGroup > li:last-child, #logout >li:last-child, #help > li:last-child{
+
+#superhero>li:last-child, #chapterOverview>li:last-child, #educationalPlan>li:last-child, #achievedCompetences>li:last-child, #school>li:last-child, #studyGroup>li:last-child, #logout>li:last-child, #help>li:last-child {
   margin-bottom: -15px;
 }
 
+
 /*dunkelblau*/
-#superhero > li:nth-child(1), li:nth-child(3), li:nth-child(5), li:nth-child(7), #educationalPlan > li:nth-child(1), li:nth-child(3), li:nth-child(5), li:nth-child(7), #chapterOverview > li:nth-child(1), #achievedCompetences > li:nth-child(1), li:nth-child(3), #school > li:nth-child(1), #studyGroup > li:nth-child(1), #help > li:nth-child(1),  li:nth-child(3), li:nth-child(5),  li:nth-child(7),  li:nth-child(9), #logout >li:nth-child(1), li:nth-child(3), li:nth-child(5) {
+
+#superhero>li:nth-child(1), li:nth-child(3), li:nth-child(5), li:nth-child(7), #educationalPlan>li:nth-child(1), li:nth-child(3), li:nth-child(5), li:nth-child(7), #chapterOverview>li:nth-child(1), #achievedCompetences>li:nth-child(1), li:nth-child(3), #school>li:nth-child(1), #studyGroup>li:nth-child(1), #help>li:nth-child(1), li:nth-child(3), li:nth-child(5), li:nth-child(7), li:nth-child(9), #logout>li:nth-child(1), li:nth-child(3), li:nth-child(5) {
   background-color: #001a3a !important;
 }
 
-#chapterOverview > li:nth-child(3), #achievedCompetences > li:nth-child(5){
+#chapterOverview>li:nth-child(3), #achievedCompetences>li:nth-child(5) {
   background-color: #79ab2e !important;
 }
 
-#chapterOverview > li:nth-child(5), #achievedCompetences > li:nth-child(7){
+#chapterOverview>li:nth-child(5), #achievedCompetences>li:nth-child(7) {
   background-color: #c6d54f !important;
 }
 
-#chapterOverview > li:nth-child(7), #achievedCompetences > li:nth-child(9){
+#chapterOverview>li:nth-child(7), #achievedCompetences>li:nth-child(9) {
   background-color: #94c122 !important;
 }
 
-#chapterOverview > li:nth-child(9), #achievedCompetences > li:nth-child(11){
+#chapterOverview>li:nth-child(9), #achievedCompetences>li:nth-child(11) {
   background-color: #44b284 !important;
 }
 
-#chapterOverview > li:nth-child(11), #achievedCompetences > li:nth-child(13){
+#chapterOverview>li:nth-child(11), #achievedCompetences>li:nth-child(13) {
   background-color: #ffdd00 !important;
 }
 
-#chapterOverview > li:nth-child(13), #achievedCompetences > li:nth-child(15){
+#chapterOverview>li:nth-child(13), #achievedCompetences>li:nth-child(15) {
   background-color: #ffed98 !important;
 }
 
-#chapterOverview > li:nth-child(15), #achievedCompetences > li:nth-child(17){
+#chapterOverview>li:nth-child(15), #achievedCompetences>li:nth-child(17) {
   background-color: #fbb900 !important;
 }
 
-#chapterOverview > li:nth-child(17), #achievedCompetences > li:nth-child(19){
+#chapterOverview>li:nth-child(17), #achievedCompetences>li:nth-child(19) {
   background-color: #ef7d25 !important;
 }
 
-#chapterOverview > li:nth-child(19), #achievedCompetences > li:nth-child(21){
+#chapterOverview>li:nth-child(19), #achievedCompetences>li:nth-child(21) {
   background-color: #d60d66 !important;
 }
 
-#chapterOverview > li:nth-child(21), #achievedCompetences > li:nth-child(23){
+#chapterOverview>li:nth-child(21), #achievedCompetences>li:nth-child(23) {
   background-color: #ea518d !important;
 }
 
-#chapterOverview > li:nth-child(23), #achievedCompetences > li:nth-child(25){
+#chapterOverview>li:nth-child(23), #achievedCompetences>li:nth-child(25) {
   background-color: #f29db7 !important;
 }
 
-#chapterOverview > li:nth-child(25), #achievedCompetences > li:nth-child(27){
+#chapterOverview>li:nth-child(25), #achievedCompetences>li:nth-child(27) {
   background-color: #a62068 !important;
 }
 
-#chapterOverview > li:nth-child(27), #achievedCompetences > li:nth-child(29){
+#chapterOverview>li:nth-child(27), #achievedCompetences>li:nth-child(29) {
   background-color: #008fc8 !important;
 }
 
-#chapterOverview > li:nth-child(29), #achievedCompetences > li:nth-child(31){
+#chapterOverview>li:nth-child(29), #achievedCompetences>li:nth-child(31) {
   background-color: #62c2d0 !important;
 }
 
-#chapterOverview > li:nth-child(31), #achievedCompetences > li:nth-child(33){
+#chapterOverview>li:nth-child(31), #achievedCompetences>li:nth-child(33) {
   background-color: #004077 !important;
 }
 
-#chapterOverview > li:nth-child(33), #achievedCompetences > li:nth-child(35){
+#chapterOverview>li:nth-child(33), #achievedCompetences>li:nth-child(35) {
   background-color: #3873b9 !important;
 }
 
+
 /*hover*/
 
-#educationalPlan a:hover, #superhero a:hover, #logout a:hover, #help a:hover, #school a:hover,#studyGroup a:hover, #superhero a:hover{
+#educationalPlan a:hover, #superhero a:hover, #logout a:hover, #help a:hover, #school a:hover, #studyGroup a:hover, #superhero a:hover {
   background-color: #4565ad !important;
 }
 
-#chapterOverview > li:nth-child(1) a:hover, #achievedCompetences > li:nth-child(1) a:hover, #achievedCompetences > li:nth-child(3) a:hover{
+#chapterOverview>li:nth-child(1) a:hover, #achievedCompetences>li:nth-child(1) a:hover, #achievedCompetences>li:nth-child(3) a:hover {
   background-color: #4565ad !important;
 }
 
-#chapterOverview > li:nth-child(3) a:hover, #achievedCompetences > li:nth-child(5) a:hover{
+#chapterOverview>li:nth-child(3) a:hover, #achievedCompetences>li:nth-child(5) a:hover {
   background-color: #a1c153 !important;
 }
 
-#chapterOverview > li:nth-child(5) a:hover, #achievedCompetences > li:nth-child(7) a:hover{
+#chapterOverview>li:nth-child(5) a:hover, #achievedCompetences>li:nth-child(7) a:hover {
   background-color: #dbe283 !important;
 }
 
-#chapterOverview > li:nth-child(7) a:hover, #achievedCompetences > li:nth-child(9) a:hover{
+#chapterOverview>li:nth-child(7) a:hover, #achievedCompetences>li:nth-child(9) a:hover {
   background-color: #bad151 !important;
 }
 
-#chapterOverview > li:nth-child(9) a:hover, #achievedCompetences > li:nth-child(11) a:hover{
+#chapterOverview>li:nth-child(9) a:hover, #achievedCompetences>li:nth-child(11) a:hover {
   background-color: #7cc3a3 !important;
 }
 
-#chapterOverview > li:nth-child(11) a:hover, #achievedCompetences > li:nth-child(13) a:hover{
+#chapterOverview>li:nth-child(11) a:hover, #achievedCompetences>li:nth-child(13) a:hover {
   background-color: #ffea64 !important;
 }
 
-#chapterOverview > li:nth-child(13) a:hover, #achievedCompetences > li:nth-child(15) a:hover{
+#chapterOverview>li:nth-child(13) a:hover, #achievedCompetences>li:nth-child(15) a:hover {
   background-color: #fff3d8 !important;
 }
 
-#chapterOverview > li:nth-child(15) a:hover, #achievedCompetences > li:nth-child(17) a:hover{
+#chapterOverview>li:nth-child(15) a:hover, #achievedCompetences>li:nth-child(17) a:hover {
   background-color: #ffcf53 !important;
 }
 
-#chapterOverview > li:nth-child(17) a:hover, #achievedCompetences > li:nth-child(19) a:hover{
+#chapterOverview>li:nth-child(17) a:hover, #achievedCompetences>li:nth-child(19) a:hover {
   background-color: #f5a04c !important;
 }
 
-#chapterOverview > li:nth-child(19) a:hover, #achievedCompetences > li:nth-child(21) a:hover{
+#chapterOverview>li:nth-child(19) a:hover, #achievedCompetences>li:nth-child(21) a:hover {
   background-color: #e35184 !important;
 }
 
-#chapterOverview > li:nth-child(21) a:hover, #achievedCompetences > li:nth-child(23) a:hover{
+#chapterOverview>li:nth-child(21) a:hover, #achievedCompetences>li:nth-child(23) a:hover {
   background-color: #ee7ba9 !important;
 }
 
-#chapterOverview > li:nth-child(23) a:hover, #achievedCompetences > li:nth-child(25) a:hover{
+#chapterOverview>li:nth-child(23) a:hover, #achievedCompetences>li:nth-child(25) a:hover {
   background-color: #f7bed2 !important;
 }
 
-#chapterOverview > li:nth-child(25) a:hover, #achievedCompetences > li:nth-child(27) a:hover{
+#chapterOverview>li:nth-child(25) a:hover, #achievedCompetences>li:nth-child(27) a:hover {
   background-color: #c9427e !important;
 }
 
-#chapterOverview > li:nth-child(27) a:hover, #achievedCompetences > li:nth-child(29) a:hover{
+#chapterOverview>li:nth-child(27) a:hover, #achievedCompetences>li:nth-child(29) a:hover {
   background-color: #4fa8da !important;
 }
 
-#chapterOverview > li:nth-child(29) a:hover, #achievedCompetences > li:nth-child(31) a:hover{
+#chapterOverview>li:nth-child(29) a:hover, #achievedCompetences>li:nth-child(31) a:hover {
   background-color: #94d3e5 !important;
 }
 
-#chapterOverview > li:nth-child(31) a:hover, #achievedCompetences > li:nth-child(33) a:hover{
+#chapterOverview>li:nth-child(31) a:hover, #achievedCompetences>li:nth-child(33) a:hover {
   background-color: #005daa !important;
 }
 
-#chapterOverview > li:nth-child(33) a:hover, #achievedCompetences > li:nth-child(35) a:hover{
+#chapterOverview>li:nth-child(33) a:hover, #achievedCompetences>li:nth-child(35) a:hover {
   background-color: #658bc8 !important;
 }
