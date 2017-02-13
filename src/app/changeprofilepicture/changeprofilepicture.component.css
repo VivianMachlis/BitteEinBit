@@ -1,0 +1,43 @@
+#header {
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+#ProfilbildAendern {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#abbrechen {
+  background-color: #8d86d6;
+  color: #4565ad !important;
+}
+
+#speichern {
+  background-color: #001a3a;
+  color: white;
+}
+
+#abbrechen, #speichern {
+  display: inline-block;
+  margin-top: 20px;
+  color: white;
+  width: 150px;
+  height: 40px;
+  font-size: 13pt;
+  margin: auto;
+  font-weight: bold;
+  border-style: none;
+}
+
+#pic1, #pic2, #pic3, #pic4, #pic5, #pic6 {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+#pic7, #pic8, #pic9, #pic10, #pic11, #pic12 {
+  display: inline-block;
+}
