@@ -27,6 +27,7 @@ import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component'
 
 //custom Modules
 import { AppRoutingModule }     from './app-routing.module';
+import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 
 @NgModule({
   declarations: [
