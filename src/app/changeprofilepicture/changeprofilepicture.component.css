@@ -34,11 +34,11 @@
 }
 
 
-/*@media (max-width: 767ox) {
+@media (max-width: 300px) {
   #speichern {
-    margin-top: 10px;
+    margin-top: 5px;
   }
-}*/
+}
 
 #pic1, #pic2, #pic3, #pic4, #pic5, #pic6 {
   display: inline-block;
