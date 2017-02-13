@@ -68,7 +68,6 @@ html {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
 .liste {
   margin-top: -15px;
 }
@@ -111,10 +110,6 @@ html {
 
 #inListPic {
   padding-bottom: 30px;
-}
-
-#superheroPic, #schoolPic, #studyGroupPic, #helpPic, {
-  margin-left: 1px;
 }
 
 #logo {
