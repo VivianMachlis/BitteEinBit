@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ComService} from 'app/com.service';
 import {chapter} from 'app/class/chapter.class'
-import {ValidateService} from './../validate.service'
+import { RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
 	private chapters : Array<chapter> = [];
 
- 	constructor(private comservice: ComService,private check : ValidateService) { 
+ 	constructor(private comservice: ComService) { 
      //this.check.validate();
    }
 

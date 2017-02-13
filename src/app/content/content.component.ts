@@ -12,7 +12,7 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
-  	document.getElementById("test").innerHTML = this.comService.login("","").toString();
+  	//document.getElementById("test").innerHTML = this.comService.login("","").toString();
   }
 
 }

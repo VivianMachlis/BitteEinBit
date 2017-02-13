@@ -27,6 +27,8 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { AppRoutingModule }     from './app-routing.module';
 import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 import { ChangeprofilepictureComponent } from './changeprofilepicture/changeprofilepicture.component';
+import {ComService} from './com.service';
+import {ValidateService} from './validate.service'
 
 @NgModule({
   declarations: [
@@ -57,7 +59,7 @@ import { ChangeprofilepictureComponent } from './changeprofilepicture/changeprof
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ComService,ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

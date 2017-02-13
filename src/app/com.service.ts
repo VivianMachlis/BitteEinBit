@@ -9,14 +9,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ComService {
-	private token: String;
-	private isAuth : Boolean;
+	private token: string;
+	private isAuth : boolean;
 	private loginHeader : Headers;
 	
 	private url:  string = "http://46.101.204.215:1337";
-	private loginUrl: String = "/api/V1/login"; //PUT
-	private changePwUrl: String = "/api/V1/requestPasswordRecovery"; //PUT
-	private resetPwUrl:String = "/api/V1/passwordRecovery/reset"; //PUT
+	private loginUrl: string = "/api/V1/login"; //PUT
+	private changePwUrl: string = "/api/V1/requestPasswordRecovery"; //PUT
+	private resetPwUrl:string = "/api/V1/passwordRecovery/reset"; //PUT
 	private deleteProfileUrl = "/api/V1/student/"; //DELETE
 	private changeAvatarUrl = "api/V1/avatar/:avatarId"; //PUT
 	private getAvatarsUrl = "/api/V1/avatar/";		//GET
@@ -156,7 +156,7 @@ export class ComService {
   	
 
 
-  	async getAchievedCompetences(){
+  	getAchievedCompetences(){
   		return this.http.get("")
   	}
 
@@ -169,7 +169,7 @@ export class ComService {
        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    getStatusAuth() : Boolean{
+    getStatusAuth() : boolean{
       console.log('auth status is '+this.isAuth);
       return this.isAuth;
     }

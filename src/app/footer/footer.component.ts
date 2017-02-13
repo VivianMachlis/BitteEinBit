@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ValidateService} from './../validate.service'
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +7,7 @@ import {ValidateService} from './../validate.service'
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private check : ValidateService) { 
+  constructor() { 
   	//this.check.validate();
   }
 
