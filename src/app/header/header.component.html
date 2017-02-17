@@ -18,11 +18,11 @@
             <img alt="chapterOverview" src="images/chapterOverview-inactive.png">
           </a>
           <ul class="dropdown-menu scrollable-menu" id="chapterOverview">
-            <li class="liste">
-              <a href="#"><img alt="confirmation" src="images/confirmation.png">
-                CHECK! KOMPETENZENLISTE
+            <li class="liste arrow_box_left">
+              <a href="#"><img alt="confirmation" src="images/confirmation.png"> CHECK! KOMPETENZENLISTE
               </a>
             </li>
+
             
             <!--<div  id = "insert">-->
             <ng-container *ngFor = "let chapter of chapters">
@@ -32,6 +32,7 @@
             
                 
             <!--</div>-->
+
             <!--<li class="liste">
               <a href="#"><img alt="confirmation" src="images/confirmation.png">CHECK! KOMPETENZENLISTE</a>
             </li>
@@ -74,14 +75,16 @@
             <img alt="educationalPlan" src="images/educationalPlan-inactive.png">
           </a>
           <ul class="dropdown-menu" id="educationalPlan">
-            <li class="liste">
+            <li class="liste arrow_box_left">
               <a href="#"><img alt="educationalPlan" src="images/educationalPlan-big.png"></a>
             </li>
+
             <ng-container *ngFor = "let chapter of educationalPlanList">
               <li role="separator" class="divider"></li>
               <li class="liste"><a href="#"> {{chapter?.name}} </a></li>
             </ng-container>
             <!--<div id = "insert3"></div>-->
+
             <!--<li role="separator" class="divider"></li>
             <li class="liste"><a href="#">MATHE ZR BIS 10</a></li>
             <li role="separator" class="divider"></li>
@@ -95,7 +98,7 @@
             <img alt="achievedCompetences" src="images/achievedCompetences-inactive.png">
           </a>
           <ul class="dropdown-menu scrollable-menu" id="achievedCompetences">
-            <li class="liste">
+            <li class="liste arrow_box_left">
               <a href="#"><img alt="achievedCompetences" src="images/achievedCompetences-big.png">
                 <p>DAS<br> KANN<br> ICH!</p>
               </a>
@@ -103,11 +106,13 @@
             </li>
             <li role="separator" class="divider"></li>
             <li class="liste"><a href="#">ALLE KOMPETENZEN!</a></li>
+
             <ng-container *ngFor = "let chapter of chapters">
               <li role="separator" class="divider"></li>
               <li class="liste"><a href="#"> {{chapter?.name}} </a></li>
             </ng-container>
             <!--<div id="insert2" ></div>-->
+
             <!--<li class="liste"><a href="#">DAS BIN ICH</a></li>
             <li role="separator" class="divider"></li>
             <li class="liste"><a href="#">ICH UND DIE ANDEREN</a></li>
@@ -146,21 +151,17 @@
       </ul>
 
 
-      <div class="col-sm-4 hidden-xs">
+      <div class="hidden-xs">
         <a class="navbar-brand">
           <img alt="logo" id="logo" src="images/logo.png">
         </a>
       </div>
-
-
-
-
-      <ul class="nav navbar-nav navbar-right col-sm-4">
+      <ul class="nav navbar-nav navbar-right col-xs float-xs-right text-xs-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="superheroPic">
             <img alt="superhero" src="images/student/superhero-robin-inactive.png"></a>
           <ul class="dropdown-menu" id="superhero">
-            <li class="liste">
+            <li class="liste arrow_box">
               <a href="#"><img alt="superhero" src="images/student/superhero-robin-big-active.png"></a>
             </li>
             <li role="separator" class="divider"></li>
@@ -176,7 +177,7 @@
             <img alt="school" src="images/school/school-inactive.png">
           </a>
           <ul class="dropdown-menu" id="school">
-            <li class="liste">
+            <li class="liste arrow_box">
               <a href="#"><img alt="school" src="images/school/school-purple-big-active.png"></a>
             </li>
           </ul>
@@ -185,8 +186,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="studyGroupPic">
             <img alt="studyGroup" src="images/studyGroup/studyGroup_2b_inactive.png"></a>
           <ul class="dropdown-menu" id="studyGroup">
-            <li class="liste">
-              <a href="#"><img alt="studyGroup" src={{student?.studyGroup?.image?.imageUrlBig}}></a>
+
+            <li class="liste arrow_box">
+              <a href="#"><img alt="studyGroup" src="{{student?.studyGroup?.image?.imageUrlBig}}"></a>
             </li>
 
           </ul>
@@ -195,7 +197,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="helpPic">
             <img alt="help" src="images/help-inactive.png"></a>
           <ul class="dropdown-menu" id="help">
-            <li class="liste">
+            <li class="liste arrow_box">
               <a href="#"><img alt="help" src="images/help-big.png">
                 <p>BRAUCHST <br> DU HILFE?</p>
               </a>
@@ -211,10 +213,10 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="logoutPic">
             <img alt="logout" src="images/logout-iactive.png"></a>
           <ul class="dropdown-menu" id="logout">
-            <li class="liste">
+            <li class="liste arrow_box">
               <a href="#"><img id="inListPic" alt="logout" src="images/logout-big.png">
                 <p> MÖCHTEST DU<br> CHECK! <br>VERLASSEN?</p>
               </a>
