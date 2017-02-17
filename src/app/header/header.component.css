@@ -68,6 +68,7 @@ html {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
 .liste {
   margin-top: -15px;
 }
@@ -83,6 +84,10 @@ html {
   .navbar-right {
     padding: 0px;
     margin-right: -2px;
+    top: -6px;
+  }
+  .nav {
+    margin-top: -2px;
   }
   .dropdown {
     border-color: white;
@@ -96,6 +101,9 @@ html {
     border-color: white;
     border-bottom-style: solid;
     border-bottom-width: thin;
+  }
+  .divider {
+    margin-top: 5px;
   }
 }
 
