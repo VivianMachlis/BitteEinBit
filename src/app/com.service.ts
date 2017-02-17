@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {chapter} from 'app/class/chapter.class';
+import {educationalPlan} from 'app/class/educationalPlan.class';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -82,8 +83,15 @@ export class ComService {
   			this.noAuthError;
   		}
   	}
-
-  	getChapterDetails() : Observable<chapter[]>{
+    getEducationalPlan() : Observable<any>{
+      if(this.isAuth){
+        return this.http.get(this.url+this.getEducationalPlanUrl,{headers:this.loginHeader})
+          .map((res: Response) => res.json());
+      }else{
+        this.noAuthError();
+      }
+    }
+  	getChapterDetails() : Observable<any>{
       var transactionIsHandled = false;      
   		if(this.isAuth){
   			return this.http.get(this.url+this.getChapterDetailsUrl,{headers:this.loginHeader})
@@ -119,14 +127,7 @@ export class ComService {
   			this.noAuthError;
   		}
   	}
-  	getEducationalPlan(){
-  		if(this.isAuth){
-  			return this.http.get(this.url+this.getEducationalPlanUrl,{headers:this.loginHeader})
-  				.map((res: Response) => res.json());
-  		}else{
-  			this.noAuthError;
-  		}
-  	}
+  	
   	getEducationalPlanFiltered(id: number){
   		if(this.isAuth){
   			return this.http.get(this.url+this.getEducationalPlanFiltered+id,{headers:this.loginHeader})
