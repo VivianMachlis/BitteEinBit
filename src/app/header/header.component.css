@@ -38,6 +38,10 @@ html {
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+  color: #4565ad;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
   color: white;
 }
 
@@ -54,14 +58,57 @@ html {
 /*sprechblase
 
 .dropdown-menu:before {
+  width: 250px;
+  height: 100px;
+  margin-top: 30px;
+  -webkit-transform: rotate(360deg);
+  border-style: solid;
+  border-color: transparent transparent #34c7ac transparent;
+}
+
+.navbar-nav>ul:before {
   content: ' ';
+  -webkit-transform: rotate(360deg);
   position: absolute;
-  top: 80px;
-  left: 120px;
+  width: 0;
+  height: 0;
+  right: 130px;
+  top: -200px;
   border: 15px solid;
-  border-color: #fff transparent transparent #fff;
+  border-color: transparent transparent #34c7ac transparent;
 }
 */
+
+arrow_box {
+  position: relative;
+  background: #88b7d5;
+  /*border: 4px solid #c2e1f5;*/
+}
+
+.arrow_box:after, .arrow_box:before {
+  bottom: 100%;
+  left: 90%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  /*pointer-events: none;*/
+}
+
+.arrow_box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #001a3a;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+.arrow_box:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: white;
+  border-width: 16px;
+  margin-left: -16px;
+}
 
 .dropdown-menu>li>a {
   padding: 10px 20px;
