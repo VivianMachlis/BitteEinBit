@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
 	private chapters : Array<chapter> = [];
 
+
  	constructor(private comservice: ComService) { 
      //this.check.validate();
    }
@@ -26,6 +27,10 @@ export class HeaderComponent implements OnInit {
   	.subscribe(	data => this.handleChapterData(data),   
   				error =>  this.logError(error));
   }
+  getAchievedCompetences(){
+    //this.getAchievedCompetences()
+    //.subscribe(   )
+  }
   logError(er){
   	console.error(er);
   }
@@ -33,19 +38,19 @@ export class HeaderComponent implements OnInit {
       console.log("chapter got handled");
       console.log(data);
       if(data){
-      	document.getElementById("chapterOverview").innerHTML = "";
+      	//document.getElementById("chapterOverview").innerHTML = "";
         //var chapter : {id : number; strongcolor : String; weakcolor : String;}
         var chapters : Array<chapter> = [];
-        var newElement : String = '<li class="liste"><a href="#"><img alt="confirmation" src="images-master/confirmation.png">CHECK! KOMPETENZENLISTE</a></li>';
+        var newElement : string = '';
         //console.log(chapters);
         //console.log(data[0]._id);
         for (var i = 0; i < data.length; ++i) {
           //console.log("sill alive");
           var id :number = data[i]._id;
-          var name : String = data[i].name;
+          var name : string = data[i].name;
       	  newElement = newElement+'<li role="separator" class="divider"></li><li class="liste"><a href="#">'+name+'</a></li>';
-          var scolor : String = data[i].strongcolor;
-          var wcolor : String = data[i].weakcolor;
+          var scolor : string = data[i].strongcolor;
+          var wcolor : string = data[i].weakcolor;
           //console.log("id: " + id + "scolor: " + scolor + "wcolor: " + wcolor);
           var newChapter : chapter = new chapter(id, name , scolor, wcolor);
 
@@ -53,7 +58,8 @@ export class HeaderComponent implements OnInit {
           chapters[i] = newChapter;
           //console.log(chapters[i]);
         }
-        document.getElementById("chapterOverview").innerHTML = newElement.toString();
+        document.getElementById("insert").innerHTML = document.getElementById("insert").innerHTML+newElement;
+        document.getElementById("insert2").innerHTML = document.getElementById("insert2").innerHTML+newElement;
         this.chapters = chapters;
         console.log(this.chapters[1].id);
       }

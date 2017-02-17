@@ -25,6 +25,9 @@ export class ComService {
 	private getChapterSingleUrl = "/api/V1/chapter/:"; //GET with id 
 	private getChapterIllustrationsUrl = "/api/V1/chapterillustrations/:"; //GET with id
 	private getStudentCompetencesUrl = "/api/V1/studentcompetence?checked=true&chapterId="; //GET chapter with ID
+  //Liefert die Kompetenzen des angegebenen Kapitels zurück.
+  //checked (true | false) optional, Default: false. Ist checked=true, dann werden nur die bereits erreichten Kompetenzen des Schülers zurückgegeben. (Filterung erfolgt auf Serverseite).
+  //chapterId: Die eindeutige Id eines Kapitels
 	private getEducationalPlanUrl = "/api/V1/educationalPlan"; //GET
 	private getEducationalPlanFilteredUrl = "/api/V1/educationalPlan/:"; //GET with ID
 
@@ -81,34 +84,13 @@ export class ComService {
   	}
 
   	getChapterDetails() : Observable<chapter[]>{
-      var transactionIsHandled = false;
-      //ugly code to wait for authorization
-      //console.log("getChapterDetails got called");
+      var transactionIsHandled = false;      
   		if(this.isAuth){
-        //console.log("chapter should get handled");
-        var result : Array<chapter> = [];
   			return this.http.get(this.url+this.getChapterDetailsUrl,{headers:this.loginHeader})
   				.map((res: Response) => res.json())
-          //.subscribe(data =>  {result = this.handleChapter(data,this),transactionIsHandled=true},this.handleError)
-        //while(!transactionIsHandled){
-          //await this.delay(50);
-          //console.log("fuck await");
-      //}
-        //console.log("iwork?: ")
-        //console.log(result[1].id);
-        //return result;
-        //console.log(x);
-        //return x;
-           /*{
-            for (var i = 0; i < length; ++i) {
-              // code...
-            }
-            console.log(data);
-          });
-          console.log("im am auth");*/
   		}else{
         console.log("token is still not ready");
-  			this.noAuthError;
+  			this.noAuthError();
   		}
   	}
    
@@ -157,8 +139,16 @@ export class ComService {
 
 
   	getAchievedCompetences(){
-  		return this.http.get("")
-  	}
+       //first write callback => get chapters => get achievedcompetences with chapter id in callback
+
+  		if(this.isAuth){
+        return this.http.get(this.url+this.getStudentCompetencesUrl,{headers:this.loginHeader})
+          .map((res: Response) => res.json());
+      }else{
+        this.noAuthError;
+      }
+  	  
+    }
 
   	private noAuthError(){
       console.error("not auth");
