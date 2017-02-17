@@ -50,6 +50,19 @@ html {
   border-radius: 5px;
 }
 
+
+/*sprechblase
+
+.dropdown-menu:before {
+  content: ' ';
+  position: absolute;
+  top: 80px;
+  left: 120px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+}
+*/
+
 .dropdown-menu>li>a {
   padding: 10px 20px;
 }
@@ -71,6 +84,10 @@ html {
 
 .liste {
   margin-top: -15px;
+}
+
+.nav>li>a {
+  padding: 10px 5px;
 }
 
 @media (max-width: 767px) {
@@ -117,8 +134,9 @@ html {
 }
 
 #logo {
-  display: block;
-  margin: auto;
+  position: absolute;
+  left: 45%;
+  margin-bottom: 5px;
 }
 
 
