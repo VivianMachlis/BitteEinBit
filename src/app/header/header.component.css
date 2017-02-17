@@ -73,10 +73,6 @@ html {
   margin-top: -15px;
 }
 
-.navbar-right {
-  padding-left: 70px;
-}
-
 @media (max-width: 767px) {
   .hidden-xs {
     display: none !important;
@@ -121,8 +117,8 @@ html {
 }
 
 #logo {
-  padding-left: 125px;
-  transform: scale(1.3, 1.3);
+  display: block;
+  margin: auto;
 }
 
 
