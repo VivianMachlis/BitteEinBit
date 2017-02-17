@@ -23,8 +23,15 @@
                 CHECK! KOMPETENZENLISTE
               </a>
             </li>
-            <li role="separator" class="divider"></li>
-            <div id = "insert"></div>
+            
+            <!--<div  id = "insert">-->
+            <ng-container *ngFor = "let chapter of chapters">
+              <li role="separator" class="divider"></li>
+              <li class="liste"><a href="#"> {{chapter?.name}} </a></li>
+            </ng-container>
+            
+                
+            <!--</div>-->
             <!--<li class="liste">
               <a href="#"><img alt="confirmation" src="images/confirmation.png">CHECK! KOMPETENZENLISTE</a>
             </li>
@@ -70,7 +77,11 @@
             <li class="liste">
               <a href="#"><img alt="educationalPlan" src="images/educationalPlan-big.png"></a>
             </li>
-            <div id = "insert3"></div>
+            <ng-container *ngFor = "let chapter of educationalPlanList">
+              <li role="separator" class="divider"></li>
+              <li class="liste"><a href="#"> {{chapter?.name}} </a></li>
+            </ng-container>
+            <!--<div id = "insert3"></div>-->
             <!--<li role="separator" class="divider"></li>
             <li class="liste"><a href="#">MATHE ZR BIS 10</a></li>
             <li role="separator" class="divider"></li>
@@ -92,8 +103,11 @@
             </li>
             <li role="separator" class="divider"></li>
             <li class="liste"><a href="#">ALLE KOMPETENZEN!</a></li>
-            <li role="separator" class="divider"></li>
-            <div id="insert2" ></div>
+            <ng-container *ngFor = "let chapter of chapters">
+              <li role="separator" class="divider"></li>
+              <li class="liste"><a href="#"> {{chapter?.name}} </a></li>
+            </ng-container>
+            <!--<div id="insert2" ></div>-->
             <!--<li class="liste"><a href="#">DAS BIN ICH</a></li>
             <li role="separator" class="divider"></li>
             <li class="liste"><a href="#">ICH UND DIE ANDEREN</a></li>
@@ -172,7 +186,7 @@
             <img alt="studyGroup" src="images/studyGroup/studyGroup_2b_inactive.png"></a>
           <ul class="dropdown-menu" id="studyGroup">
             <li class="liste">
-              <a href="#"><img alt="studyGroup" src="images/studyGroup/studyGroup_2b_active-big.png"></a>
+              <a href="#"><img alt="studyGroup" src={{student?.studyGroup?.image?.imageUrlBig}}></a>
             </li>
 
           </ul>

@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {chapter} from 'app/class/chapter.class';
 import {educationalPlan} from 'app/class/educationalPlan.class';
+import {student} from 'app/class/student.class';
+import {school} from 'app/class/school.class';
+import {image} from 'app/class/image.class';
+import {studyGroup} from 'app/class/studyGroup.class';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -21,7 +25,7 @@ export class ComService {
 	private deleteProfileUrl = "/api/V1/student/"; //DELETE
 	private changeAvatarUrl = "api/V1/avatar/:avatarId"; //PUT
 	private getAvatarsUrl = "/api/V1/avatar/";		//GET
-	private getStudentUrl = "/api/V1/student/";	//GET
+	private getStudentUrl = "/api/V1/student";	//GET
 	private getChapterDetailsUrl = "/api/V1/chapter"; //GET
 	private getChapterSingleUrl = "/api/V1/chapter/:"; //GET with id 
 	private getChapterIllustrationsUrl = "/api/V1/chapterillustrations/:"; //GET with id
@@ -33,6 +37,10 @@ export class ComService {
 	private getEducationalPlanFilteredUrl = "/api/V1/educationalPlan/:"; //GET with ID
 
 
+  private chapters : Array<chapter> = [];
+  private educationalPlanList : Array<educationalPlan> =[];
+  private avatar : string;
+  private student : student;
 
 
 	constructor(private http: Http) { 
@@ -66,6 +74,8 @@ export class ComService {
  			    com.isAuth = true;
   			  com.token = data.token;
   			  com.loginHeader.append('Authorization', data.token);
+          com.ChapterDetails(callback);
+          com.getEducationalPlan(callback);
           //callback to enable routing
           callback();
   		  }
@@ -83,19 +93,29 @@ export class ComService {
   			this.noAuthError;
   		}
   	}
-    getEducationalPlan() : Observable<any>{
+    getEducationalPlan(callback){
       if(this.isAuth){
         return this.http.get(this.url+this.getEducationalPlanUrl,{headers:this.loginHeader})
-          .map((res: Response) => res.json());
+          .map((res: Response) => res.json()).subscribe(data => this.intializeEducationalPlan(data,callback));
       }else{
         this.noAuthError();
       }
     }
-  	getChapterDetails() : Observable<any>{
+
+    /*getStudent(){
+      if(this.isAuth){
+        this.http.get(this.url+this.getStudentUrl,{headers:this.loginHeader})
+          .map((res: Response) => res.json()).subscribe(  data => this.initializeChapters(data);;
+      }else{
+        this.noAuthError();
+      }
+    }*/
+
+  	ChapterDetails(callback){
       var transactionIsHandled = false;      
   		if(this.isAuth){
   			return this.http.get(this.url+this.getChapterDetailsUrl,{headers:this.loginHeader})
-  				.map((res: Response) => res.json())
+  				.map((res: Response) => res.json()).subscribe(  data => this.initializeChapters(data,callback));
   		}else{
         console.log("token is still not ready");
   			this.noAuthError();
@@ -163,6 +183,43 @@ export class ComService {
     getStatusAuth() : boolean{
       console.log('auth status is '+this.isAuth);
       return this.isAuth;
+    }
+
+    getChapters() : Array<chapter>{
+      console.log("handling chapters");
+      return this.chapters;
+    }
+    getEdPlans() : Array<educationalPlan>{
+      return this.educationalPlanList;
+    }
+
+
+    initializeChapters(data,callback){
+    if(data){
+      console.log("chapters handled");
+      console.log(data);
+      for (var i = 0; i < data.length; ++i) {
+        this.chapters[i] = 
+          new chapter(data[i]._id, data[i].name,data[i].strongcolor,data[i].weakcolor);
+      }
+      callback();
+    }
+  }
+
+    intializeEducationalPlan(data,callback){
+      if(data){
+        console.log("ed plan handled");
+        console.log(data);
+        for (var i = 0; i < data.length; ++i) {
+          var id : number = data[i]._id;
+          var name : string = data[i].name;
+          var thema : string = data[i].thema;
+          console.log(id+name+thema)
+          this.educationalPlanList[i] = new educationalPlan(id,name,thema);
+        }
+        console.log(this.educationalPlanList);
+        callback();
+      }
     }
 
 

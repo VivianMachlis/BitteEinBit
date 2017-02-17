@@ -3,6 +3,8 @@ import {ComService} from 'app/com.service';
 import {chapter} from 'app/class/chapter.class'
 import {educationalPlan} from 'app/class/educationalPlan.class';
 import { RouterModule} from '@angular/router';
+import {student} from 'app/class/student.class';
+
 
 @Component({
   selector: 'app-header',
@@ -11,29 +13,47 @@ import { RouterModule} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-	private chapters : Array<chapter> = [];
-  private educationalPlans : Array<educationalPlan> = [];
+	public chapters : Array<chapter> = [];
+  private educationalPlanList : Array<educationalPlan> = [];
+  private avatar : string;
+  private student : student;
 
 
  	constructor(private comservice: ComService) { 
      //this.check.validate();
+     
+     /*this.educationalMenu();
+     this.getStudent();*/
+     
    }
 
   ngOnInit() {
-    
+    this.chapters = this.comservice.getChapters();
+    this.educationalPlanList = this.comservice.getEdPlans();
   	//this.comservice.login("bugsbunny","M11K");
-  	this.getChapters();
-    this.educationalMenu();
+  	
   }
-  getChapters(){
+  /*getChapters(){
   	this.comservice.getChapterDetails()
-  	.subscribe(	data => this.handleChapterData(data),   
-  				error =>  this.logError(error));
-  }
-  educationalMenu(){
+  	.subscribe(	data => this.initializeChapters(data);
+      //data => this.handleChapterData(data),   
+  		//error =>  this.logError(error));
+  }*/
+  /*initializeChapters(data){
+    if(data){
+      console.log("chapters handled");
+      for (var i = 0; i < data.length; ++i) {
+        this.chapters[i] = 
+          new chapter(data[i]._id, data[i].name,data[i].strongcolor,data[i].weakcolor);
+      }
+    }
+  }*/
+
+  /*educationalMenu(){
     this.comservice.getEducationalPlan()
-    .subscribe(data => this.handleEducationalMenu(data),
-           error => this.logError(error));
+    .subscribe(data => this.educationalPlan = data);
+           //data => this.handleEducationalMenu(data),
+           //error => this.logError(error));
   }
   getAchievedCompetences(){
     //this.getAchievedCompetences()
@@ -42,6 +62,23 @@ export class HeaderComponent implements OnInit {
   logError(er){
   	console.error(er);
   }
+  /*getStudent(){
+      this.comservice.getStudent()
+      .subscribe(data => this.initializeStudent(data));
+  }
+
+  initializeStudent(data){
+    console.log(data);
+    var schoolImage : image =  
+      new image(data.school.imageUrl,data.school.imageUrlInactive,data.school.imageUrlBig);
+    var studyGroupImage : image =  
+      new image(data.studyGroups.imageUrl,data.studyGroups.imageUrlInactive,data.studyGroups.imageUrlBig);
+    var schoolVar = new school(data.school.name,data.school.adress,data.school.country,data.school.email,data.school.telefon, schoolImage);
+    var studygroup = new studyGroup(data.studyGroups.class, studyGroupImage);
+    this.student = new student(data._id,data.forname,data.surname,data.birth,data.formteacher,data.avatarId,schoolVar,studygroup);
+    }
+
+   //not calles at the moment
    handleChapterData(data:any){
       console.log("chapter got handled");
       console.log(data);
@@ -76,7 +113,7 @@ export class HeaderComponent implements OnInit {
         console.log(this.chapters[1].id);
       }
     }
-
+    //not called at the moment
     handleEducationalMenu(data){
       console.log("educational plans got handled");
       console.log(data);
@@ -99,6 +136,6 @@ export class HeaderComponent implements OnInit {
       }else{
         console.log("unexpected error : load educational plans")
       }
-    }
+    }*/
 
 }
