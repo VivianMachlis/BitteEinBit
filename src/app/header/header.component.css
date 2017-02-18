@@ -111,6 +111,11 @@ html {
 
 /*mobile Ansicht*/
 @media (max-width: 767px) {
+
+  .arrow_box:after, .arrow_box:before, .arrow_box_left:after, .arrow_box_left:before{
+    display: none !important;
+  }
+  
   .hidden-xs {
     display: none !important;
   }
