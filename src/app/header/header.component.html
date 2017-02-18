@@ -23,14 +23,14 @@
               </a>
             </li>
 
-            
+
             <!--<div  id = "insert">-->
-            <ng-container *ngFor = "let chapter of chapters">
+            <ng-container *ngFor="let chapter of chapters">
               <li role="separator" class="divider"></li>
               <li class="liste"><a href="#"> {{chapter?.name}} </a></li>
             </ng-container>
-            
-                
+
+
             <!--</div>-->
 
             <!--<li class="liste">
@@ -79,7 +79,7 @@
               <a href="#"><img alt="educationalPlan" src="images/educationalPlan-big.png"></a>
             </li>
 
-            <ng-container *ngFor = "let chapter of educationalPlanList">
+            <ng-container *ngFor="let chapter of educationalPlanList">
               <li role="separator" class="divider"></li>
               <li class="liste"><a href="#"> {{chapter?.name}} </a></li>
             </ng-container>
@@ -107,7 +107,7 @@
             <li role="separator" class="divider"></li>
             <li class="liste"><a href="#">ALLE KOMPETENZEN!</a></li>
 
-            <ng-container *ngFor = "let chapter of chapters">
+            <ng-container *ngFor="let chapter of chapters">
               <li role="separator" class="divider"></li>
               <li class="liste"><a href="#"> {{chapter?.name}} </a></li>
             </ng-container>
@@ -193,6 +193,9 @@
 
           </ul>
         </li>
+        <!-- Trennstrich -->
+        <li class="cut hidden-xs"></li>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="helpPic">
             <img alt="help" src="images/help-inactive.png"></a>

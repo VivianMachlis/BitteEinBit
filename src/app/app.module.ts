@@ -28,7 +28,8 @@ import { AppRoutingModule }     from './app-routing.module';
 import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component';
 import { ChangeprofilepictureComponent } from './changeprofilepicture/changeprofilepicture.component';
 import {ComService} from './com.service';
-import {ValidateService} from './validate.service'
+import {ValidateService} from './validate.service';
+import { PopupComponent } from './popup/popup.component'
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {ValidateService} from './validate.service'
     LoginComponent,
     ChangepasswordComponent,
     DeleteprofileComponent,
-    ChangeprofilepictureComponent
+    ChangeprofilepictureComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
