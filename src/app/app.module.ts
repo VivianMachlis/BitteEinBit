@@ -32,6 +32,7 @@ import {ValidateService} from './validate.service';
 import {AvatarService} from'./avatar.service';
 import {ContentproviderService} from './contentprovider.service';
 import { PopupComponent } from './popup/popup.component';
+import { ParseCssDirective } from './parse-css.directive';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PopupComponent } from './popup/popup.component';
     ChangepasswordComponent,
     DeleteprofileComponent,
     ChangeprofilepictureComponent,
-    PopupComponent
+    PopupComponent,
+    ParseCssDirective
   ],
   imports: [
     BrowserModule,

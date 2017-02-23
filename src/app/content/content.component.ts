@@ -3,6 +3,7 @@ import {ComService} from"../com.service";
 import {ContentproviderService} from '../contentprovider.service'
 import {image} from 'app/class/image.class'
 import {Competence} from 'app/class/competence.class'
+import { ParseCssDirective } from 'app/parse-css.directive';
 
 @Component({
   selector: 'app-content',

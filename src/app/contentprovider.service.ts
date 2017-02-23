@@ -13,8 +13,9 @@ export class ContentproviderService {
 	private imageLeft : BehaviorSubject<string> = new BehaviorSubject<string>(null);
 	private flag : BehaviorSubject<string> = new BehaviorSubject<string>(null);
 	private competences : BehaviorSubject<Array<Competence>> = new BehaviorSubject<Array<Competence>>(null);
-	private backroundColor : BehaviorSubject<string> = new BehaviorSubject<string>("#005daa");
+	private backroundColor : BehaviorSubject<string> = new BehaviorSubject<string>(this.standard);
 	private illustrations : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private standard : string = "#005daa";
 
 
   constructor(private com : ComService) { 
@@ -29,7 +30,10 @@ export class ContentproviderService {
 
   }
   setEdPlan(id:number){
-
+    this.illustrations.next(false);
+    this.backroundColor.next(this.standard);
+    //this.com.getEdPlans(id).subscribe(data=>)
+    //this.competences.next()
   }
   setCompetences(){
 

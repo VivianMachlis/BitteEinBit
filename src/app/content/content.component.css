@@ -16,7 +16,7 @@
   	grid-template-rows: 25% 100px auto;
 }
 .bubble {
-  align: center;
+  /*align: center;*/
   background-image: url("images/contentTextBubble.png");
   background-size: contain;
   background-repeat: no-repeat;

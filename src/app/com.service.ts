@@ -60,6 +60,11 @@ export class ComService {
 		this.loginHeader.append('Content-Type', 'application/json');
 	}
 
+    getEdPlan(id:number) :Observable<JSON>{
+      return this.http.get(this.url+this.getEducationalPlanFiltered+id,{headers:this.loginHeader})
+          .map((res: Response) => res.json());
+    }
+
 
     deleteAccount(pw){
       console.log("request muss zuerst auskommentiert werden, wir wollen den account nicht sperren");
