@@ -1,0 +1,27 @@
+#popup {
+    display: block;
+    margin: auto;
+    margin-top: 150px;
+    background-color: #76b82d !important;
+    width: 350px;
+    height: 250px;
+    font-size: 13 pt;
+    border: 4px solid white;
+    border-radius: 10px;
+}
+
+#delete {
+    margin-top: 10px;
+    margin-left: 310px;
+}
+
+#configuration {
+    margin-top: -20px;
+    margin-left: 130px;
+}
+
+#textfeld {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}

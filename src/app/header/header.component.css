@@ -15,7 +15,6 @@ nav {
 
 
 /*unsichtbare Scrollbar*/
-
 html {
   -ms-overflow-style: none;
   /*IE 10+*/
@@ -54,6 +53,7 @@ html {
   border-radius: 5px;
 }
 
+/*Dropdown-Pfeil*/
 .arrow_box:after, .arrow_box:before, .arrow_box_left:after, .arrow_box_left:before {
   bottom: 100%;
   left: 90%;
@@ -62,7 +62,6 @@ html {
   height: 0;
   width: 0;
   position: absolute;
-  /*pointer-events: none;*/
 }
 
 .arrow_box_left:after, .arrow_box_left:before {
@@ -110,7 +109,13 @@ html {
   padding: 10px 5px;
 }
 
+/*mobile Ansicht*/
 @media (max-width: 767px) {
+
+  .arrow_box:after, .arrow_box:before, .arrow_box_left:after, .arrow_box_left:before{
+    display: none !important;
+  }
+  
   .hidden-xs {
     display: none !important;
   }
@@ -142,7 +147,6 @@ html {
 
 
 /*Text wird neben dem Bild in der ersten Liste angezeigt*/
-
 .dropdown p {
   text-align: right;
   display: inline-block;
@@ -159,16 +163,20 @@ html {
   bottom: 15%;
 }
 
+/*Trennstrich*/
+.cut {
+  margin-top: 10px;
+  height: 40px;
+  border-left: 1px solid #4565ad;
+}
 
 /*Immer das letzte Listenelement*/
-
 #superhero>li:last-child, #chapterOverview>li:last-child, #educationalPlan>li:last-child, #achievedCompetences>li:last-child, #school>li:last-child, #studyGroup>li:last-child, #logout>li:last-child, #help>li:last-child {
   margin-bottom: -15px;
 }
 
 
 /*dunkelblau*/
-
 #superhero>li:nth-child(1), li:nth-child(3), li:nth-child(5), li:nth-child(7), #educationalPlan>li:nth-child(1), li:nth-child(3), li:nth-child(5), li:nth-child(7), #chapterOverview>li:nth-child(1), #achievedCompetences>li:nth-child(1), li:nth-child(3), #school>li:nth-child(1), #studyGroup>li:nth-child(1), #help>li:nth-child(1), li:nth-child(3), li:nth-child(5), li:nth-child(7), li:nth-child(9), #logout>li:nth-child(1), li:nth-child(3), li:nth-child(5) {
   background-color: #001a3a !important;
 }
