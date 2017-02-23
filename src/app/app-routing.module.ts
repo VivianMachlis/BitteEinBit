@@ -36,8 +36,8 @@
           {path:'', component:ChangeprofilepictureComponent,outlet:'content',canActivate:[ValidateService]},
       ]},
       //standard when logged in
-      { path: 'achievedCompetences',  children: [
-        //{path:'', component:ContentComponent,outlet:'content'},
+      { path: 'home',  children: [
+        {path:'', component:ContentComponent,outlet:'content'},
         {path:'', component:FooterComponent,outlet:'footer',canActivate:[ValidateService]},
         {path:'', component:HeaderComponent,outlet:'header',canActivate:[ValidateService]}
         ]

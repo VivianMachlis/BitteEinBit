@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ComService} from 'app/com.service'
 
 @Component({
   selector: 'app-deleteprofile',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteprofileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private com : ComService) { }
 
   ngOnInit() {
+  }
+
+  deleteAccount(pw:string){
+  	if(pw){
+  		this.com.deleteAccount(pw);
+  	}else{
+  		//handleme
+  	}
   }
 
 }

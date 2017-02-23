@@ -29,6 +29,8 @@ import { DeleteprofileComponent } from './deleteprofile/deleteprofile.component'
 import { ChangeprofilepictureComponent } from './changeprofilepicture/changeprofilepicture.component';
 import {ComService} from './com.service';
 import {ValidateService} from './validate.service'
+import {AvatarService} from'./avatar.service'
+import {ContentproviderService} from './contentprovider.service'
 
 @NgModule({
   declarations: [
@@ -59,7 +61,7 @@ import {ValidateService} from './validate.service'
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ComService,ValidateService],
+  providers: [ComService,ValidateService,AvatarService,ContentproviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

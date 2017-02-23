@@ -1,3 +1,21 @@
-<app-right></app-right>
-<app-middle></app-middle>
-<app-left></app-left>
+
+
+<div class = container [style.backround] = backroundColor>
+	<div class="item-b" id = left>
+		<img src="{{imageLeft}}">
+	</div>
+	<div class="item-c" id = right>
+		<img src="{{imageRight}}">
+	</div>
+	<!-- Content Test -->
+    <div class="item-a" id = "container">
+    	<ng-container *ngFor= "let comp of competences">
+    	<div class = bubble>
+  			<p class="text-left description">{{comp?.studentText}}</p>
+  			<p class="text-left number">{{comp?.number}}</p>
+            <img class = "{{comp?.checked}}" />
+        </div>
+        </ng-container>
+
+	</div>
+</div>

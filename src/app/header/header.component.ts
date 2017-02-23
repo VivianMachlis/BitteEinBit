@@ -4,6 +4,9 @@ import {chapter} from 'app/class/chapter.class'
 import {educationalPlan} from 'app/class/educationalPlan.class';
 import { RouterModule} from '@angular/router';
 import {student} from 'app/class/student.class';
+import {avatar} from 'app/class/avatar.class';
+import {AvatarService} from 'app/avatar.service';
+import {image} from 'app/class/image.class'
 
 
 @Component({
@@ -11,15 +14,18 @@ import {student} from 'app/class/student.class';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
 
 	public chapters : Array<chapter> = [];
   private educationalPlanList : Array<educationalPlan> = [];
-  private avatar : string;
-  private student : student;
+  public avatarPicture : avatar;
+  private studentData : student;
+  
 
 
- 	constructor(private comservice: ComService) { 
+ 	constructor(private comservice: ComService,private ava : AvatarService) { 
+     
      //this.check.validate();
      
      /*this.educationalMenu();
@@ -30,8 +36,33 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.chapters = this.comservice.getChapters();
     this.educationalPlanList = this.comservice.getEdPlans();
+    this.studentData = this.comservice.getStudentData();
+    //console.log("S1: "+ this.studentData);
+    this.ava.getAvatar().subscribe(image => this.avatarPicture=image);
+    //console.log(this.avatarPicture);
+    //console.log("A1-log: "+this.ava.getAvatar());
   	//this.comservice.login("bugsbunny","M11K");
+
+    for (var i = 0; i < this.chapters.length; ++i) {
+      this.styleDropDown(this.chapters[i]);
+    }
+
   	
+  }
+
+
+  styleDropDown(chapter: chapter){
+    let style = document.createElement('style');
+    style.appendChild(document.createTextNode(`li#chapter${chapter.id} > a {
+            background-color: ${chapter.strongcolor} !important;
+            color: #FFF;
+        }
+        li#chapter${chapter.id} > a:hover {
+            background-color: ${chapter.weakcolor} !important;
+            color: #FFF;
+        }`));
+    document.getElementById("chapterOverview").appendChild(style);
+
   }
   /*getChapters(){
   	this.comservice.getChapterDetails()

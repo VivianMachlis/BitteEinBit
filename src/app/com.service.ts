@@ -6,6 +6,8 @@ import {student} from 'app/class/student.class';
 import {school} from 'app/class/school.class';
 import {image} from 'app/class/image.class';
 import {studyGroup} from 'app/class/studyGroup.class';
+import {avatar} from 'app/class/avatar.class'
+import {Competence} from 'app/class/competence.class'
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -22,9 +24,9 @@ export class ComService {
 	private loginUrl: string = "/api/V1/login"; //PUT
 	private changePwUrl: string = "/api/V1/requestPasswordRecovery"; //PUT
 	private resetPwUrl:string = "/api/V1/passwordRecovery/reset"; //PUT
-	private deleteProfileUrl = "/api/V1/student/"; //DELETE
-	private changeAvatarUrl = "api/V1/avatar/:avatarId"; //PUT
-	private getAvatarsUrl = "/api/V1/avatar/";		//GET
+	private deleteProfileUrl = "/api/V1/student"; //DELETE
+	private changeAvatarUrl = "/api/V1/avatar/:"; //PUT
+	private getAvatarsUrl = "/api/V1/avatar";		//GET
 	private getStudentUrl = "/api/V1/student";	//GET
 	private getChapterDetailsUrl = "/api/V1/chapter"; //GET
 	private getChapterSingleUrl = "/api/V1/chapter/:"; //GET with id 
@@ -39,8 +41,11 @@ export class ComService {
 
   private chapters : Array<chapter> = [];
   private educationalPlanList : Array<educationalPlan> =[];
-  private avatar : string;
-  private student : student;
+  private currentAvatar : number;
+  private avatarList :Array<avatar> = [];
+  private studentData : student = null;
+  private username: string = '';
+  private compentences : Array<Competence> = []
 
 
 	constructor(private http: Http) { 
@@ -56,14 +61,39 @@ export class ComService {
 	}
 
 
+    deleteAccount(pw){
+      console.log("request muss zuerst auskommentiert werden, wir wollen den account nicht sperren");
+      //this.http.delete(this.url+this.deleteProfileUrl, 
+      //    {headers:this.loginHeader}).subscribe(data => console.log("com changepw: "+data));
+    }
 
-	login(username: String , password: String , callback: any){
+
+
+	  login(username: string , password: string , callback: any){
+      this.username = username;
 			return this.http.put(this.url+this.loginUrl,
 				JSON.stringify({ username, password }),
 				{headers:this.loginHeader})
 				.map((res: Response) => res.json())
 				.subscribe(data => this.handleData(data, this,callback),this.handleError);
-	}
+	  }
+    //not needed because they dont want us to check if the password is actually correct
+    checkLogin(password: string , callback: any){
+      var username = this.username;
+      return this.http.put(this.url+this.loginUrl,
+        JSON.stringify({username, password }),
+        {headers:this.loginHeader})
+        .map((res: Response) => res.json())
+        .subscribe(data => callback(data.token,this.token),this.handleError);
+    }
+
+    udpateAvatar(id:number){
+      var x :string =this.url+this.changeAvatarUrl+id;
+      this.http.put(x, {headers:this.loginHeader});
+      console.log("com: "+ x);
+    }
+
+
   	private handleError(data:any){
   		console.log(data);
   	}
@@ -76,6 +106,9 @@ export class ComService {
   			  com.loginHeader.append('Authorization', data.token);
           com.ChapterDetails(callback);
           com.getEducationalPlan(callback);
+          com.getStudent(callback);
+          com.fetchAvatars(callback);
+          com.getCompetences(callback);
           //callback to enable routing
           callback();
   		  }
@@ -85,10 +118,10 @@ export class ComService {
 
   	changePassword(oldPw : String , newPw : String){
   		if(oldPw&&newPw&&this.isAuth){
-  			return this.http.put(this.url+this.getChapterDetailsUrl, 
-  				JSON.stringify({ oldPw, newPw }),
-  				{headers:this.loginHeader})
-  				.map((res: Response) => res.json());
+  			return this.http.put(this.url+this.changePwUrl, 
+  				JSON.stringify({ 'newpassword': newPw ,'oldpassword':oldPw}),
+  				{headers:this.loginHeader}).subscribe(data => console.log("com changepw: "+data));
+  				
   		}else{
   			this.noAuthError;
   		}
@@ -102,14 +135,36 @@ export class ComService {
       }
     }
 
-    /*getStudent(){
+    getStudent(callback){
       if(this.isAuth){
         this.http.get(this.url+this.getStudentUrl,{headers:this.loginHeader})
-          .map((res: Response) => res.json()).subscribe(  data => this.initializeChapters(data);;
+          .map((res: Response) => res.json()).subscribe(  data => this.initializeStudent(data,callback));
       }else{
         this.noAuthError();
       }
-    }*/
+    }
+
+    fetchAvatars(callback){
+      if(this.isAuth){
+        this.http.get(this.url+this.getAvatarsUrl,{headers:this.loginHeader})
+          .map((res: Response) => res.json()).subscribe(  data => this.initializeAvatars(data,callback));
+      }else{
+        this.noAuthError();
+      }
+    }
+
+    initializeAvatars(data,callback){
+      //console.log("avatar before ini: "+ data);
+      for (var i = 0; i < data.length; ++i) {
+        var AvatarImage : image =  
+          new image(data[i].avatarUrl,data[i].avatarInactiveUrl,data[i].avatarBigUrl);
+        //console.log(AvatarImage);
+        this.avatarList[data[i]._id] = new avatar(data[i]._id,AvatarImage);
+        //console.log(this.avatarList[i]+ "counter: "+ i);
+      }
+      //console.log("avatars: "+this.avatarList[0].image.imageUrlBig);
+      callback();
+    }
 
   	ChapterDetails(callback){
       var transactionIsHandled = false;      
@@ -139,14 +194,42 @@ export class ComService {
   			this.noAuthError;
   		}
   	}
-  	getCompetences(){
+  	getCompetences(callback){
   		if(this.isAuth){
   			return this.http.get(this.url+this.getStudentCompetencesUrl,{headers:this.loginHeader})
-  				.map((res: Response) => res.json());
+  				.map((res: Response) => res.json()).subscribe(data => this.initCompetences(data,callback));
   		}else{
   			this.noAuthError;
   		}
   	}
+
+    getCompetenceList ():Array<Competence>{
+      return this.compentences;
+    }
+
+    initCompetences(data,callback){
+      if(data){
+        for (var i = 0; i < data.length; ++i) {
+          var id:number = data[i].id;
+          var chapterId:number = data[i].chapterId;
+          var teacherText:string = data[i].teacherText;
+          var studentText:string = data[i].studentText;
+          var number:number = data[i].number;
+          var checked:boolean = <boolean> data[i].checked;
+          var fromDate:Date = new Date(data[i].fromDate);
+          //console.log(fromDate+""+checked+"");
+          var x :Competence = new Competence(id,chapterId,teacherText,studentText,number,checked,fromDate);
+          //console.log(x);
+          this.compentences[id] = x;
+          //console.log(this.compentences[id]);
+
+        }
+        //console.log(this.compentences);
+        callback();
+      }else{
+        this.noAuthError;
+      }
+    }
   	
   	getEducationalPlanFiltered(id: number){
   		if(this.isAuth){
@@ -181,7 +264,7 @@ export class ComService {
     }
 
     getStatusAuth() : boolean{
-      console.log('auth status is '+this.isAuth);
+      //console.log('auth status is '+this.isAuth);
       return this.isAuth;
     }
 
@@ -192,12 +275,22 @@ export class ComService {
     getEdPlans() : Array<educationalPlan>{
       return this.educationalPlanList;
     }
+    getStudentData() : student{
+      //console.log(this.studentData);
+      return this.studentData;
+    }
+    getAvatars() : Array<avatar>{
+      return this.avatarList;
+    }
+    getAvatar() : avatar{
+      return this.avatarList[this.studentData.avatarId];
+    }
 
 
     initializeChapters(data,callback){
     if(data){
       console.log("chapters handled");
-      console.log(data);
+      //console.log(data);
       for (var i = 0; i < data.length; ++i) {
         this.chapters[i] = 
           new chapter(data[i]._id, data[i].name,data[i].strongcolor,data[i].weakcolor);
@@ -209,19 +302,33 @@ export class ComService {
     intializeEducationalPlan(data,callback){
       if(data){
         console.log("ed plan handled");
-        console.log(data);
+        //console.log(data);
         for (var i = 0; i < data.length; ++i) {
           var id : number = data[i]._id;
           var name : string = data[i].name;
           var thema : string = data[i].thema;
-          console.log(id+name+thema)
+          //console.log(id+name+thema)
           this.educationalPlanList[i] = new educationalPlan(id,name,thema);
         }
-        console.log(this.educationalPlanList);
+        //console.log(this.educationalPlanList);
         callback();
       }
     }
-
+    initializeStudent(data,callback){
+      //console.log(data);
+      var schoolImage : image =  
+        new image(data.school.imageUrl,data.school.imageUrlInactive,data.school.imageUrlBig);
+      var studyGroupImage : image =  
+        new image(data.studyGroups.imageUrl,data.studyGroups.imageUrlInactive,data.studyGroups.imageUrlBig);
+      var schoolVar = 
+        new school(data.school.name,data.school.adress,data.school.country,data.school.email,data.school.telefon, schoolImage);
+      var studygroup = 
+        new studyGroup(data.studyGroups.class, studyGroupImage);
+      this.studentData = 
+        new student(data._id,data.forname,data.surname,data.birth,data.formteacher,data.avatarId,schoolVar,studygroup);
+      //console.log("studentData: "+this.studentData);
+    callback();
+    }
 
 
 }

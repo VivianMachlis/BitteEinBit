@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <img src="images-master/delete-profile.png" class="img-responsive" id="header" alt="Startseite">
+    <img src="images/delete-profile.png" class="img-responsive" id="header" alt="Startseite">
   </div>
 </div>
 <p id="PasswortAendern">PROFIL LÖSCHEN</p>
@@ -9,12 +9,12 @@
     <div class="form-group">
       <label for="password" class="col-sm-4 control-label" id="Label1">PASSWORT* </label>
       <div class="col-sm-4">
-        <input type="password" class="form-control" id="inputFeld1">
+        <input type="password" class="form-control" id="inputFeld1" #pw>
       </div>
     </div>
   </div>
   <div align="center">
-    <button type="button" class="btn btn-primary" id="PWloeschen">LÖSCHEN</button>
+    <button type="button" class="btn btn-primary" (click) = "deleteAccount(pw.value)" id="PWloeschen">LÖSCHEN</button>
   </div>
 
 </form>

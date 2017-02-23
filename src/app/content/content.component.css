@@ -1,0 +1,29 @@
+/*.item-c{
+  grid-area: 1 / col4-start / last-line / 6
+}
+.item-b{
+  grid-column: 1 / span 3;
+  grid-row: 1 / last-line;
+}
+.item-a{
+  grid-column: 3 / col4-start;
+  grid-row: 1 / last-line;
+}*/
+.container{
+	margin-top: 60px;
+	margin-bottom: 50px;
+  	grid-template-columns: 40px 50px auto 50px 40px;
+  	grid-template-rows: 25% 100px auto;
+}
+.bubble {
+  align: center;
+  background-image: url("images/contentTextBubble.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size:100%;
+  width: 350px;
+  height:150px;
+  margin-left: auto ;
+  margin-right: auto ;
+
+}

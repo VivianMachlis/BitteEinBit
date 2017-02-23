@@ -1,6 +1,6 @@
+import {image} from'./image.class';
 export class avatar{
 	constructor(public id: number,
-				public avatarUrl: string,
-  				public avatarInactiveUrl : string, 
-  				public avatarBigUrl : string){}
+				public image: image
+				){}
 }
